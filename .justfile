@@ -6,6 +6,11 @@ run-test TEST_NAME:
 run-file FILE_NAME:
 	cargo run -- "{{FILE_NAME}}"
 
+# Build Lune for release
+# TODO: Take input argument for build type, rather than defaulting to `release`
+build src/main.rs:
+	cargo build --release
+
 # Run tests for the Lune library
 test:
 	cargo test --lib -- --test-threads 1
