@@ -2,6 +2,8 @@
 
 set -e
 
+source ./utils.sh
+
 function build() {
   # Get the name of the package to build from the current working directory
   dirname=$(pwd)
