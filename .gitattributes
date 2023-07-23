@@ -7,3 +7,6 @@
 # Ensure all lua files use LF
 *.lua  eol=lf
 *.luau eol=lf
+
+*.PKGBUILD linguist-language=shell
+*.justfile linguist-language=makefile
