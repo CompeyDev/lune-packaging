@@ -15,3 +15,13 @@ function get_current_version() {
 
   printf current_version
 }
+
+log_prefix=\x1b[34m[\u001b[0m\x1b[31m
+log_suffix=\x1b[34m\x1b[34m]\u001b[0m
+
+function log() {
+   log_identifier=$1
+   log_msg=$2
+
+   echo -e "$logprefix$log_identifier$log_suffix $log_msg"
+}
