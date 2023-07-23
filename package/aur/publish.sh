@@ -73,6 +73,7 @@ mv ./ssh_config ~/.ssh/config
 declare -a aur_ssh_urls=("ssh://aur@aur.archlinux.org/lune.git" "ssh://aur@aur.archlinux.org/lune-git.git")
 
 # As for now, we only publish the precompiled binary package to the AUR
+# TODO: For the `lune` package, we need to also replace the sha256 sums in the `PKGBUILD`
 for ssh_url in "${aur_ssh_urls[@]}"
 do
   if [ $ssh_url -ne "ssh://aur@aur.archlinux.org/lune-git.git" ]; then
