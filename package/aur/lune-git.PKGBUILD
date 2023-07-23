@@ -7,7 +7,7 @@ pkgdesc="GIT - A standalone Luau script runtime"
 arch=('any')
 url="https://github.com/filiptibell/lune"
 license=('MPL')
-makedepends=('rust')
+makedepends=('just' 'rust')
 provides=('lune')
 conflicts=('lune')
 source=("git+$url.git")
@@ -24,20 +24,21 @@ pkgver() {
 }
 
 build() {
-        cd "$srcdir/lune"
+  cd "$srcdir/lune"
 
   git checkout $pkgver
-  cargo build --release
+  just build
 }
 
 check() {
-        cd "$srcdir/lune"
-  cargo test -- --test-threads 1
+  cd "$srcdir/lune"
+  
+  just test
 }
 
 package() {
-        cd "$srcdir/lune"
+  cd "$srcdir/lune"
   mkdir -p "$pkgdir/usr/bin"
 
-        mv ./target/release/lune "$pkgdir/usr/bin"
+  mv ./target/release/lune "$pkgdir/usr/bin"
 }
