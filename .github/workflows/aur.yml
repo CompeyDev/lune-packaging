@@ -21,4 +21,4 @@ jobs:
           SKIP_LOGIN: true
 
       - name: AUR Routine
-        run: docker build -t aur_routine package/aur && docker cp . aur_routine:/git_src && docker run aur_routine
+        run: docker build -t aur_routine package/aur && docker run aur_routine
