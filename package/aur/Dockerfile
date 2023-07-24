@@ -24,6 +24,6 @@ RUN chown -R builder:builder /home/builder/.ssh && \
     chmod +x /home/builder/packaging_scripts/*.sh
 
 USER builder
-WORKDIR /home/builder
+WORKDIR /home/builder/packaging_scripts
 
 ENTRYPOINT ["/home/builder/packaging_scripts/publish.sh"]
