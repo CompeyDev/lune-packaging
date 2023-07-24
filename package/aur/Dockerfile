@@ -14,14 +14,12 @@ RUN useradd -m builder && \
 RUN mkdir -p /home/builder/.ssh && \
     touch /home/builder/.ssh/known_hosts
 
-COPY . /home/builder/packaging_scripts
-
-RUN mv /home/builder/packaging_scripts/ssh_config /home/builder/.ssh/config
-
 RUN chown -R builder:builder /home/builder/.ssh && \
     chmod 600 /home/builder/.ssh/* -R && \
     chown -R builder:builder /home/builder/packaging_scripts && \
     chmod +x /home/builder/packaging_scripts/*.sh
+
+COPY . /home/builder/packaging_scripts
 
 USER builder
 WORKDIR /home/builder/packaging_scripts
