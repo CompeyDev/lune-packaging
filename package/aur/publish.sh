@@ -38,8 +38,8 @@ function test() {
 
   # Test with our modified `PKGBUILD` in a temporary directory
   orig_dir=$(pwd)
-  testing_dir=$(mktmp)
-  cp PKGBUILD $testing_dir/ && cd $testing_dir
+  testing_dir=$(mktemp)
+  cp PKGBUILD $testing_dir/PKGBUILD && cd $testing_dir
 
   log "#" "Moved \`PKGBUILD\` into testing directory $testing_dir"
   
@@ -76,7 +76,7 @@ declare -a aur_ssh_urls=("ssh://aur@aur.archlinux.org/lune.git" "ssh://aur@aur.a
 # TODO: For the `lune` package, we need to also replace the sha256 sums in the `PKGBUILD`
 for ssh_url in "${aur_ssh_urls[@]}"
 do
-  if [ $ssh_url -ne "ssh://aur@aur.archlinux.org/lune-git.git" ]; then
+  if [ $ssh_url != "ssh://aur@aur.archlinux.org/lune-git.git" ]; then
     log "*" "Cloning AUR package from $ssh_url"
 
     # NOTE: We need to have our public and private keys in `~/.ssh/aur.pub` & `~/.ssh/aur` respectively
