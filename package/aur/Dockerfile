@@ -16,6 +16,8 @@ RUN mkdir -p /home/builder/.ssh && \
 
 RUN ls /home/
 
+RUN ls /home/runner/work/lune/lune
+
 COPY /home/runner/work/lune/lune/* /git_src
 
 COPY /git_src/package/aur/ssh_config /home/builder/.ssh/config
