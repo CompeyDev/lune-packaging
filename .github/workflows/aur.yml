@@ -14,6 +14,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        
+      - name: debug
+        run: ls /home/runner/work/lune/lune
 
       - name: Setup docker CLI
         uses: actions-hub/docker/cli@master
