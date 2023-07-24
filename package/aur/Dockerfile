@@ -14,18 +14,12 @@ RUN useradd -m builder && \
 RUN mkdir -p /home/builder/.ssh && \
     touch /home/builder/.ssh/known_hosts
 
-COPY . /git_src
+COPY . /home/builder/packaging_scripts
 
-RUN ls /git_src
-
-RUN cp /git_src/package/aur/ssh_config /home/builder/.ssh/config
+RUN mv /home/builder/packaging_scripts/ssh_config /home/builder/.ssh/config
 
 RUN chown -R builder:builder /home/builder/.ssh && \
     chmod 600 /home/builder/.ssh/* -R
-
-RUN mkdir /home/builder/packaging_scripts && cd /git_src
-
-COPY publish.sh utils.sh *.PKGBUILD /home/builder/packaging_scripts
 
 USER builder
 WORKDIR /home/builder
