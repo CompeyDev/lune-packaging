@@ -16,12 +16,12 @@ RUN mkdir -p /home/builder/.ssh && \
 
 RUN ls /home/
 
-COPY ./package/aur/ssh_config /home/builder/.ssh/config
+COPY /git_src/package/aur/ssh_config /home/builder/.ssh/config
 
 RUN chown -R builder:builder /home/builder/.ssh && \
     chmod 600 /home/builder/.ssh/* -R
 
-RUN mkdir /home/builder/packaging_scripts
+RUN mkdir /home/builder/packaging_scripts && cd /git_src
 
 COPY publish.sh utils.sh *.PKGBUILD /home/builder/packaging_scripts
 
