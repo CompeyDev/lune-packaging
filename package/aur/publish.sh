@@ -52,6 +52,7 @@ function test() {
 }
 
 function push() {
+  pwd 
   log "*" "Initializing AUR push step"
 
   pkgname=$1
