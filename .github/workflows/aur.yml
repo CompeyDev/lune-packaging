@@ -1,0 +1,24 @@
+name: Publish to AUR
+
+on:
+  push:
+    tags:
+      - "*"
+  workflow_dispatch:
+
+jobs:
+  publish:
+    name: Patch, Test and Publish PKGBUILD 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup docker CLI
+        uses: actions-hub/docker/cli@master
+        env:
+          SKIP_LOGIN: true
+
+      - name: AUR Routine
+        run: docker build -t aur_routine package/aur/Dockerfile && docker run aur_routine
