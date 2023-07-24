@@ -16,6 +16,8 @@ RUN mkdir -p /home/builder/.ssh && \
 
 COPY . /git_src
 
+RUN ls /git_src
+
 RUN cp /git_src/package/aur/ssh_config /home/builder/.ssh/config
 
 RUN chown -R builder:builder /home/builder/.ssh && \
