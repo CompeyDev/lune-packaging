@@ -25,5 +25,5 @@ function log() {
    log_identifier=$1
    log_msg=$2
 
-   echo -e "$logprefix$log_identifier$log_suffix $log_msg"
+   echo -e "$logprefix""$log_identifier"$log_suffix" "$log_msg"
 }
