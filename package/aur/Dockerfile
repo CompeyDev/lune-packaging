@@ -16,7 +16,7 @@ RUN mkdir -p /home/builder/.ssh && \
 
 COPY /home/runner/work/lune/lune/* /git_src
 
-COPY /git_src/package/aur/ssh_config /home/builder/.ssh/config
+RUN cp /git_src/package/aur/ssh_config /home/builder/.ssh/config
 
 RUN chown -R builder:builder /home/builder/.ssh && \
     chmod 600 /home/builder/.ssh/* -R
