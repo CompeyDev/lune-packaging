@@ -20,7 +20,8 @@ RUN mv /home/builder/packaging_scripts/ssh_config /home/builder/.ssh/config
 
 RUN chown -R builder:builder /home/builder/.ssh && \
     chmod 600 /home/builder/.ssh/* -R && \
-    chown -R builder:builder /home/builder/packaging_scripts
+    chown -R builder:builder /home/builder/packaging_scripts && \
+    chmod +x /home/builder/packaging_scripts/*.sh
 
 USER builder
 WORKDIR /home/builder
