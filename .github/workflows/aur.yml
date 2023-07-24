@@ -14,9 +14,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        
-      - name: debug
-        run: ls /home/runner/work/lune/lune
 
       - name: Setup docker CLI
         uses: actions-hub/docker/cli@master
@@ -24,4 +21,4 @@ jobs:
           SKIP_LOGIN: true
 
       - name: AUR Routine
-        run: docker build -t aur_routine package/aur
+        run: docker build -t aur_routine package/aur && docker run aur_routine
