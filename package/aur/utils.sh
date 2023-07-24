@@ -1,3 +1,5 @@
+set -e
+
 function increment_version() {
  local v=$1
  if [ -z $2 ]; then 
