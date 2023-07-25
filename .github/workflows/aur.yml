@@ -19,9 +19,9 @@ jobs:
         uses: actions-hub/docker/cli@master
         env:
           SKIP_LOGIN: true
-      - run: echo $SSH_CREDS
+          
       - name: Setup SSH Credentials
-        run: echo $SSH_CREDS | base64 -d | tar -xzvf - -C ~/ssh_creds
+        run: base64 -d ${{ secrets.SSH_CREDS }} | tar -xzvf - -C ~/ssh_creds
     
       - name: AUR Routine
         run: docker build -t aur_routine package/aur && docker run aur_routine
