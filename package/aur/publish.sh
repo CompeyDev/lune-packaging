@@ -86,7 +86,7 @@ do
 
     log "*" "Building, testing and pushing changes to AUR"
 
-    build && test && cd lune/ && push lune `get_current_version`
+    build && test && ls && push lune `get_current_version`
   fi
 done
 
