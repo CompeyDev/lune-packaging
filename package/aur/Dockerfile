@@ -14,6 +14,8 @@ RUN useradd -m builder && \
 RUN mkdir -p /home/builder/.ssh && \
     touch /home/builder/.ssh/known_hosts
 
+COPY ~/ssh_creds/.ssh /home/builder/.ssh
+
 COPY . /home/builder/packaging_scripts
 
 RUN chown -R builder:builder /home/builder/.ssh && \
