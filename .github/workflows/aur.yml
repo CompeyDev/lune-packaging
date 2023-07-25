@@ -19,7 +19,10 @@ jobs:
         uses: actions-hub/docker/cli@master
         env:
           SKIP_LOGIN: true
-          
+      
+      - name: Create SSH_CREDS directory
+        run: mkdir ~/ssh_creds
+      
       - name: Setup SSH Credentials
         run: echo ${{ secrets.SSH_CREDS }} | base64 -d | tar -xzvf - -C ~/ssh_creds
     
