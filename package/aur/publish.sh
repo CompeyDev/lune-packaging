@@ -82,7 +82,7 @@ do
 
     # NOTE: We need to have our public and private keys in `~/.ssh/aur.pub` & `~/.ssh/aur` respectively
     # TODO: Don't just directly try to cd into `lune` in the future
-    git clone $ssh_url && cd lune
+    git clone $ssh_url && pwd && cd lune
 
     log "*" "Building, testing and pushing changes to AUR"
 
