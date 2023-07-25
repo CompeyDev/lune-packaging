@@ -21,7 +21,7 @@ jobs:
           SKIP_LOGIN: true
       
       - name: Setup SSH Credentials
-        run: echo $SSH_CREDS | base64 -d | tar --no-same-owner -xzf - -C ~/.ssh && ls .ssh
+        run: echo $SSH_CREDS | base64 -d | tar --no-same-owner -xzf - -C ~/ssh_creds && ls .ssh
     
       - name: AUR Routine
         run: docker build -t aur_routine package/aur && docker run aur_routine
