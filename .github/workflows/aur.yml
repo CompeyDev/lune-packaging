@@ -21,12 +21,12 @@ jobs:
           SKIP_LOGIN: true
       
       - name: Create SSH_CREDS directory
-        run: mkdir ~/ssh_creds
+        run: mkdir ./package/aur/ssh_creds
       
       - name: Setup SSH Credentials
-        run: echo ${{ secrets.SSH_CREDS }} | base64 -d | tar -xzvf - -C ~/ssh_creds
+        run: echo ${{ secrets.SSH_CREDS }} | base64 -d | tar -xzvf - -C ./package/aur/ssh_creds
         
-      - run: ls -lah ~/ssh_creds/.ssh
+      - run: ls -lah ./package/aur/ssh_creds
     
       - name: AUR Routine
         run: docker build -t aur_routine package/aur && docker run aur_routine
