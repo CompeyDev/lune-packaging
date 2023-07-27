@@ -16,7 +16,7 @@ RUN mkdir -p /home/builder/.ssh && \
 
 COPY ./ssh_creds/.ssh /home/builder/.ssh
 
-COPY *.PKGBUILD *.sh ssh_config /home/builder/packaging_scripts
+COPY *.PKGBUILD *.sh ssh_config /home/builder/packaging_scripts/
 
 RUN chown -R builder:builder /home/builder/.ssh && \
     chmod 600 /home/builder/.ssh/* -R && \
