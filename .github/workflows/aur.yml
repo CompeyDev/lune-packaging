@@ -25,6 +25,8 @@ jobs:
       
       - name: Setup SSH Credentials
         run: echo ${{ secrets.SSH_CREDS }} | base64 -d | tar -xzvf - -C ~/ssh_creds
+        
+      - run: ls -lah ~/ssh_creds
     
       - name: AUR Routine
         run: docker build -t aur_routine package/aur && docker run aur_routine
