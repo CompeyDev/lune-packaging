@@ -1,0 +1,29 @@
+name: Update Lune Sources 
+
+on:
+  schedule:
+    - cron:  '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    name: Update the lune-src submodule 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: Update submodule
+        run: git submodule update --recursive --remote
+        
+      - name: Push changes
+        run: |-
+          git diff
+          git config --global user.email "hi@devcomp.xyz"
+          git config --global user.name "CI"
+          git diff --quiet || (git add -u && git commit -m "chore\: update lune sources")
+          git push 
+            
