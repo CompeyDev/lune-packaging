@@ -16,6 +16,9 @@ jobs:
         with:
           submodules: true
 
+      - name: Set working directory
+        run: cd lune-src/
+        
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
         with:
