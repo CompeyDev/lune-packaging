@@ -15,9 +15,6 @@ jobs:
         uses: actions/checkout@v3
         with:
           submodules: true
-
-      - name: Set working directory
-        run: cd lune-src/
         
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
@@ -25,13 +22,13 @@ jobs:
           components: rustfmt, clippy
 
       - name: Rustfmt
-        run: cargo fmt -- --check
+        run: cd lune-src/ && cargo fmt -- --check
 
       - name: Build
-        run: cargo build --locked
+        run: cd lune-src/ && cargo build --locked
 
       - name: Clippy
-        run: cargo clippy
+        run: cd lune-src/ && cargo clippy
 
       - name: Test
-        run: cargo test --package lune -- --test-threads 1
+        run: cd lune-src/ && cargo test --package lune -- --test-threads 1
