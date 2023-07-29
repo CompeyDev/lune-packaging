@@ -8,7 +8,7 @@ class Lune < Formula
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", "--locked", "--root", prefix, "--path", "./packages/cli"
+    system "cargo", "install", "--locked", "--root", prefix, "--path", "./src/cli"
   end
 
   test do
