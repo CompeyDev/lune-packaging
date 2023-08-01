@@ -1,0 +1,14 @@
+name: Scoop Test
+on: 
+  push:
+  workflow_dispatch:
+  
+jobs:
+  test:
+    runs-on: windows-2019
+    steps:
+      - name: Check out repo        
+        uses: actions/checkout@v2
+      - name: Test
+        run: |
+          ./test/scoop/entrypoint.ps1
