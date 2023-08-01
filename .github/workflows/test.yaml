@@ -13,7 +13,7 @@ jobs:
       - name: Copy AUR PKGBUILDs into testing dir
         run: cp -r package/aur/lune-bin/ package/aur/lune-git/ package/aur/lune/ test/aur/
         
-      - run: ls /test/aur
+      - run: ls test/aur
 
       - name: Setup docker CLI
         uses: actions-hub/docker/cli@master
