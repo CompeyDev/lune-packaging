@@ -4,7 +4,7 @@ RUN pacman --needed --noconfirm -Syu \
     base \
     git \
     pacman-contrib \
-    cargo \
+    cargo
     
 RUN useradd -m builder && \
     echo "builder ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers && \
