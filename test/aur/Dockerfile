@@ -24,4 +24,6 @@ RUN chown -R builder:builder /home/builder/packages && \
 USER builder
 WORKDIR /home/builder/packages
 
+RUN ls /home/builder/packages
+
 ENTRYPOINT ["/home/builder/packages/entrypoint.sh"]
