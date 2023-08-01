@@ -18,7 +18,7 @@ COPY lune-bin/ lune-git/ lune/ /home/builder/packages/
 COPY ./entrypoint.sh /home/builder/packages/entrypoint.sh
 
 RUN chown -R builder:builder /home/builder/packages && \
-    chmod 600 /home/builder/packages/* -R && \
+    chmod 600 /home/builder/packages/* -R
 
 USER builder
 WORKDIR /home/builder/packages
