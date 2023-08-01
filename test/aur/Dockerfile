@@ -20,13 +20,13 @@ COPY lune/ /home/builder/packages/lune
 COPY ./entrypoint.sh /home/builder/packages/entrypoint.sh
 
 RUN chown -R builder:builder /home/builder/packages && \
-    chmod 600 /home/builder/packages/* -R && \
-    chown -R builder:builder /home/builder/packages/lune-bin && \
-    chmod 600 /home/builder/packages/lune-bin -R && \
-    chown -R builder:builder /home/builder/packages/lune-git && \
-    chmod 600 /home/builder/packages/lune-git -R && \
-    chown -R builder:builder /home/builder/packages/lune && \
-    chmod 600 /home/builder/packages/lune -R && \
+    chmod 700 /home/builder/packages/* -R && \
+    # chown -R builder:builder /home/builder/packages/lune-bin && \
+    # chmod 600 /home/builder/packages/lune-bin -R && \
+    # chown -R builder:builder /home/builder/packages/lune-git && \
+    # chmod 600 /home/builder/packages/lune-git -R && \
+    # chown -R builder:builder /home/builder/packages/lune && \
+    # chmod 600 /home/builder/packages/lune -R && \
     chmod +x /home/builder/packages/*.sh
 
 USER builder
