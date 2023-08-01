@@ -13,9 +13,9 @@ RUN useradd -m builder && \
 RUN mkdir -p /home/builder/.ssh && \
     touch /home/builder/.ssh/known_hosts
 
-COPY lune-bin/ /home/builder/packages/
-COPY lune-git/ /home/builder/packages/
-COPY lune/ /home/builder/packages/
+COPY lune-bin/ /home/builder/packages/lune-bin
+COPY lune-git/ /home/builder/packages/lune-git
+COPY lune/ /home/builder/packages/lune
 
 COPY ./entrypoint.sh /home/builder/packages/entrypoint.sh
 
