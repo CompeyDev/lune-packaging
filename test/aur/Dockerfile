@@ -3,7 +3,8 @@ FROM archlinux:base-devel
 RUN pacman --needed --noconfirm -Syu \
     base \
     git \
-    pacman-contrib 
+    pacman-contrib \
+    cargo \
     
 RUN useradd -m builder && \
     echo "builder ALL=(ALL:ALL) NOPASSWD: ALL" >> /etc/sudoers && \
