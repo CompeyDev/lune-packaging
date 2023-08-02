@@ -1,17 +1,24 @@
 class Lune < Formula
-  LUNE_VERSION = "0.7.5"
-
-  desc "Standalone Luau script runtime 🌙"
+  desc "Standalone Luau script runtime"
   homepage "https://lune-org.github.io/docs"
-  url "https://github.com/filiptibell/lune/releases/download/v#{LUNE_VERSION}/lune-#{LUNE_VERSION}-macos-x86_64.zip"
-  sha256 "3c9cb328d7c3049354c714021ba857ce83ded3da4ac4b4a2a046fb2116e0bd2e"
+  url "https://github.com/filiptibell/lune/archive/refs/tags/v0.7.5.tar.gz"
+  sha256 "e8191df5d6844026772cc7afab1083235a265c506474c4c4dee0a7724b04f775"
   license "MPL-2.0"
 
+  livecheck do
+    url :stable
+    regex(/^v?(\d+(?:\.\d+)+)$/i)
+  end
+
+  depends_on "rust" => :build
+
   def install
-    bin.install "lune"
+    system "cargo", "install", *std_cargo_args
   end
 
   test do
-    system "false"
+    (testpath/"test.lua").write("print(2 + 2)")
+    output = shell_output("#{bin}/lune test.lua")
+    assert_equal "4", output.chomp
   end
 end
