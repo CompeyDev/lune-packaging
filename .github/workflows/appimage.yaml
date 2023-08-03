@@ -7,6 +7,10 @@ on:
 
 jobs:
   build:
+    strategy:
+      matrix:
+        arch: ["x86_64", "aarch64"]
+    
     name: Build the AppImage 
     runs-on: ubuntu-latest
 
@@ -23,7 +27,12 @@ jobs:
         run: cd packages/appimage && export LUNE_VERSION=0.7.5
 
       - name: Build AppImage
-        run: ./pkg2appimage/pkg2appimage lune.yml && mv ./lune/lune-$(uname -m).AppImage ./lune-$LUNE_VERSION-$(uname -m).AppImage
+        uses: lalten/run-on-arch-action@amd64-support
+        id: buildimg
+        with:
+          arch: ${{ matrix.arch }}
+          distro: ubuntu_latest
+          run: ./pkg2appimage/pkg2appimage lune.yml && mv ./lune/lune-$(uname -m).AppImage ./lune-$LUNE_VERSION-$(uname -m).AppImage
 
 
             
