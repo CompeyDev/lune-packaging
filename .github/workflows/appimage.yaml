@@ -32,7 +32,11 @@ jobs:
         with:
           arch: ${{ matrix.arch }}
           distro: ubuntu_latest
-          run: ./pkg2appimage/pkg2appimage lune.yml && mv ./lune/lune-$(uname -m).AppImage ./lune-$LUNE_VERSION-$(uname -m).AppImage
+          dockerRunArgs: |
+            --volume "${PWD}:/build"
+          run: cd /build && \ 
+            ./pkg2appimage/pkg2appimage lune.yml && \
+            mv ./lune/lune-$(uname -m).AppImage ./lune-$LUNE_VERSION-$(uname -m).AppImage
 
 
             
