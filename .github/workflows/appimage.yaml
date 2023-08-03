@@ -39,3 +39,9 @@ jobs:
             cd /build
             ./pkg2appimage/pkg2appimage lune.yml
             mv ./out/lune-*.AppImage  ./out/lune-$LUNE_VERSION.glibc2.34-$(uname -m).AppImage
+
+      - name: Upload generated images
+        uses: actions/upload-artifact@v3
+        with:
+          name: lune-0.7.5.glibc2.34-${{ matrix.arch }}.AppImage
+          path: ./out/lune-0.7.5.glibc2.34-${{ matrix.arch }}.AppImage
