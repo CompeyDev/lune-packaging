@@ -1,3 +1,7 @@
 [submodule "lune-src"]
 	path = lune-src
 	url = https://github.com/filiptibell/lune.git
+
+[submodule "pkg2appimg"]
+	path = package/appimage/pkg2appimg
+	url = https://github.com/AppImageCommunity/pkg2appimage.git
