@@ -35,7 +35,7 @@ jobs:
           dockerRunArgs: |
             --volume "${PWD}:/build"
           run: apt update && \ 
-            apt install imagemagick file desktop-file-utils curl wget dpkg-dev unzip fuse libfuse2 && \
+            apt-get install imagemagick file desktop-file-utils curl wget dpkg-dev unzip fuse libfuse2 && \
             cd /build && \ 
             ./pkg2appimage/pkg2appimage lune.yml && \
             mv ./lune/lune-$(uname -m).AppImage ./lune-$LUNE_VERSION-$(uname -m).AppImage
