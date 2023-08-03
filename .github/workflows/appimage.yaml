@@ -24,7 +24,7 @@ jobs:
         run: sudo apt install imagemagick file desktop-file-utils curl wget dpkg-dev unzip fuse libfuse2
 
       - name: Set working directory
-        run: cd /home/runner/work/lune/lune && export LUNE_VERSION=0.7.5
+        run: pwd && export LUNE_VERSION=0.7.5
 
       - name: Build AppImage
         uses: lalten/run-on-arch-action@amd64-support
