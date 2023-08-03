@@ -14,5 +14,5 @@ script:
   - Type=Application
   - Name=lune
   - Exec=/usr/bin/lune
-  - StartupNotify=true
+  - Categories=Game;
   - EOF
