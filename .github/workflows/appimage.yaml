@@ -33,7 +33,7 @@ jobs:
           arch: ${{ matrix.arch }}
           distro: buster
           dockerRunArgs: |
-            --volume "./package/appimage:/build"
+            --volume "./package/appimage:/build" --privileged
           run: |
             apt update
             apt install imagemagick file desktop-file-utils curl wget dpkg-dev unzip fuse libfuse2 -y
