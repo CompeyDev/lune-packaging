@@ -23,10 +23,7 @@ jobs:
         with:
           submodules: true
 
-      # - name: Set working directory
-      #   run: cd ./package/appimage && export LUNE_VERSION=0.7.5
-
-      - name: Build AppImage
+      - name: AppImage routine
         uses: lalten/run-on-arch-action@amd64-support
         id: buildimg
         with:
@@ -35,6 +32,8 @@ jobs:
           dockerRunArgs: |
             --volume "./package/appimage:/build" --privileged
           run: |
+            export LUNE_VERSION=0.7.5
+
             apt update
             apt install imagemagick file desktop-file-utils curl wget dpkg-dev unzip fuse libfuse2 -y
             cd /build
