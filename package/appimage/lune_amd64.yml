@@ -13,6 +13,7 @@ script:
   - [Desktop Entry]
   - Type=Application
   - Name=lune
-  - Exec=/usr/bin/lune
-  - Categories=Game;
+  - Exec=lune
+  - Categories=Development;
+  - Terminal=true
   - EOF
