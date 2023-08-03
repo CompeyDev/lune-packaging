@@ -3,7 +3,7 @@ app: lune
 ingredients:
   script:
     - dl_uri=$(curl "https://api.github.com/repos/filiptibell/lune/releases/latest" | grep -E "https.*lune-.*linux-x86_64.zip" | cut -d '"' -f4)
-    - curl -O $dl_uri
+    - wget $dl_uri
     - unzip lune-*.zip
 
 
