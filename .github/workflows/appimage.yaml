@@ -31,7 +31,8 @@ jobs:
         id: buildimg
         with:
           arch: ${{ matrix.arch }}
-          distro: ubuntu_latest
+          distro: none
+          base_image: ubuntu:jammy
           dockerRunArgs: |
             --volume "${PWD}:/build"
           run: apt update && \ 
