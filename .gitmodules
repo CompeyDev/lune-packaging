@@ -4,4 +4,4 @@
 
 [submodule "package/appimage/pkg2appimage"]
 	path = package/appimage/pkg2appimage
-	url = https://github.com/AppImageCommunity/pkg2appimage.git
+	url = https://github.com/CompeyDev/pkg2appimage.git
