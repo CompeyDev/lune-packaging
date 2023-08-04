@@ -40,8 +40,9 @@ jobs:
             apt install imagemagick file desktop-file-utils curl wget dpkg-dev unzip fuse libfuse2 -y
             wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-$SYSTEM_ARCH.AppImage -O /usr/bin/appimagetool
 
-            appimagetool()
+            appimagetool() {
               /usr/bin/appimagetool "$@"
+            }
 
             export -f /usr/bin/appimagetool
             
