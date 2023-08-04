@@ -5,20 +5,14 @@ class Lune < Formula
   sha256 "e8191df5d6844026772cc7afab1083235a265c506474c4c4dee0a7724b04f775"
   license "MPL-2.0"
 
-  livecheck do
-    url :stable
-    regex(/^v?(\d+(?:\.\d+)+)$/i)
-  end
-
   depends_on "rust" => :build
 
   def install
-    system "cargo", "install", *std_cargo_args
+    system "cargo", "install", "--all-features", *std_cargo_args
   end
 
   test do
     (testpath/"test.lua").write("print(2 + 2)")
-    output = shell_output("#{bin}/lune test.lua")
-    assert_equal "4", output.chomp
+    assert_equal "4", shell_output("#{bin}/lune test.lua").chomp
   end
 end
