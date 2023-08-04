@@ -35,8 +35,9 @@ jobs:
             export LUNE_VERSION=0.7.5
             export SYSTEM_ARCH=${{ matrix.arch }}
 
-            wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-$SYSTEM_ARCH.AppImage -O /usr/bin/appimagetool            apt update
+            apt update
             apt install imagemagick file desktop-file-utils curl wget dpkg-dev unzip fuse libfuse2 -y
+            wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-$SYSTEM_ARCH.AppImage -O /usr/bin/appimagetool
             
             cd /build
             ./pkg2appimage/pkg2appimage lune.yml
