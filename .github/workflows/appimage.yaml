@@ -33,7 +33,7 @@ jobs:
             --volume "./package/appimage:/build" --privileged
           run: |
             export LUNE_VERSION=0.7.5
-            export SYSTEM_ARCH=aarch64
+            export SYSTEM_ARCH=${{ matrix.arch }}
 
             apt update
             apt install imagemagick file desktop-file-utils curl wget dpkg-dev unzip fuse libfuse2 -y
