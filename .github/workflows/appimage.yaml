@@ -38,13 +38,14 @@ jobs:
 
             apt update
             apt install imagemagick file desktop-file-utils curl wget dpkg-dev unzip fuse libfuse2 -y
-            wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-$SYSTEM_ARCH.AppImage -O /build/lune/appimagetool
+            wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-$SYSTEM_ARCH.AppImage -O /usr/bin/appimagetool
 
             appimagetool() {
               /usr/bin/appimagetool "$@"
             }
 
             export -f appimagetool
+            export appimagetool=/usr/bin/appimagetool
             
             cd /build
             ./pkg2appimage/pkg2appimage lune.yml
