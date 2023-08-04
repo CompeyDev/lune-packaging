@@ -44,7 +44,7 @@ jobs:
               /usr/bin/appimagetool "$@"
             }
 
-            export -f /usr/bin/appimagetool
+            export -f appimagetool
             
             cd /build
             ./pkg2appimage/pkg2appimage lune.yml
