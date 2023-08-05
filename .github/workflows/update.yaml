@@ -20,7 +20,7 @@ jobs:
         run: git submodule update --recursive --remote
 
       - name: Update lune.COMMIT
-        run: git rev-parse HEAD | cut -d1 -f1 > lune.COMMIT
+        run: git rev-parse HEAD | cut -c -7 > lune.COMMIT
         
       - name: Push changes
         run: |-
