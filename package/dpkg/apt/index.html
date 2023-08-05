@@ -1,1 +1,119 @@
-<meta http-equiv="refresh" content="0; url=https://github.com/CompeyDev/lune-packaging#apt" />
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <style>
+      @font-face {
+	      font-family: 'Pixeloid Mono';
+	      src: url('https://p.devcomp.xyz/assets/fonts/PixeloidMono-VGj6x.ttf') format('truetype');
+	      font-weight: normal;
+	      font-style: normal;
+	      font-display: swap;
+      }     
+      
+      @font-face {
+	      font-family: '8 Bit Wonder';
+	      src: url('https://p.devcomp.xyz/assets/fonts/8BitWonderFont.TTF') format('truetype');
+	      font-weight: normal;
+	      font-style: normal;
+	      font-display: swap;
+      }
+
+      :root {
+        --primary-color: #1e1e2e;
+        --text-color: #cdd6f4;
+        --accent: #CBA6F7;
+        --font: 'Pixeloid Mono';
+        --heading-font: '8 Bit Wonder';
+      }
+
+      li {
+        list-style: none;
+	      margin-left: 0;
+	      padding-left: 1em;
+	      text-indent: -1em;
+	      padding-left: 1em;
+	      text-indent: -1em;
+      }
+
+      .steps:before {
+	      content: url('https://p.devcomp.xyz/assets/icons/rsz_heart-bullet-point-8-bit.png');
+	      padding-right: 10px;
+      }
+
+      code {
+        background-color:#000000;
+      }
+
+      .code {
+        max-width: 50%;
+        border:3px solid var(--accent);
+        border-radius: 10px;
+        color: #fff;
+        background-color:#000000;
+        white-space: pre-line;
+        padding:10px;
+        font-size:0.9em;
+        display: inline-block;
+      }
+
+      .code:before {
+        padding-left: 10px;
+        content: "bash";
+      }
+
+      * {
+        background-color: var(--primary-color);
+        text-decoration-color: var(--text-color);
+        font-family: var(--font);
+      }
+
+      p, h1, h2, h3, h4, h5, h6, code {
+          color: var(--text-color);
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--heading-font)
+      }
+    </style>
+  </head>
+  <body>
+    <div style="text-align: left;">
+      <u>
+        <h1>compey's apt repository :3</h1>
+      </u>
+
+      <p>This is my personal apt repository which hosts packages I maintain for apt.</p>
+      <br />
+      <h3>Setup Instructions:</h3>
+
+      <ul>
+        <li>
+          <p class="steps">Import the GPG signing keys:</p>
+          <div class="code">
+          <code>
+            $ curl https://id.devcomp.xyz/hi@devcomp.xyz/2.gpg | gpg --import
+          </code>
+          <br />  
+          <code>
+            # sh -c "curl https://id.devcomp.xyz/hi@devcomp.xyz/2.gpg | sudo gpg --dearmor &gt; /usr/share/keyrings/lune-archive-keyring.gpg"
+          </code>
+          </div>
+          <p class="steps">Add repository to sources.list:</p>
+          <div class="code">
+            <code> 
+              deb [signed-by=/usr/share/keyrings/lune-archive-keyring.gpg] http://repos.devcomp.xyz/ bookworm main 
+            </code>
+          </div>
+          <p class="steps">Update your repository metadata:</p>
+          <div class="code">
+            <code>
+              # apt update
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+<html>
