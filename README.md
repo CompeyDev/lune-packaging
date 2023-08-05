@@ -7,6 +7,7 @@ For more information on lune, see [filiptibell/lune](https://github.com/filiptib
 |----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | AUR      | ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/CompeyDev/lune-packaging/aur_test.yaml?logo=archlinux&label=%20&color=black) |
 | Scoop    | ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/CompeyDev/lune-packaging/scoop_test.yaml?logo=windows&logoColor=blue&label=%20&color=black) |
+| AppImage    | ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/CompeyDev/lune-packaging/appimage.yaml?logo=linux&logoColor=blue&label=%20&color=black) |
 
 
 ## Installation
