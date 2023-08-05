@@ -38,7 +38,7 @@ sudo sh -c "curl https://id.devcomp.xyz/hi@devcomp.xyz/2.gpg | sudo gpg --dearmo
 ```
 - Add the repository to `sources.list`:
 ```md
-deb [signed-by=/usr/share/keyrings/lune-archive-keyring.gpg] http://repos.devcomp.xyz/ bookworm main
+deb [signed-by=/usr/share/keyrings/lune-archive-keyring.gpg] https://repos.devcomp.xyz/ bookworm main
 ```
 - Install the package:
 ```console
