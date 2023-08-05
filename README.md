@@ -25,3 +25,6 @@ yay -S lune-bin
 scoop bucket add lune https://github.com/CompeyDev/lune-packaging.git
 scoop install lune
 ```
+
+### AppImage
+Go to the [GitHub Actions Page](https://github.com/CompeyDev/lune-packaging/actions/workflows/appimage.yaml), and download the artifact suitable for your architecture from the build artifacts.
