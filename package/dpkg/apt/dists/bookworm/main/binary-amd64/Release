@@ -1,0 +1,6 @@
+Origin: . bookworm
+Label: . bookworm
+Archive: bookworm
+Suite: bookworm
+Architecture: amd64
+Component: main
