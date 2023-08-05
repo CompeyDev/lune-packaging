@@ -33,12 +33,12 @@ jobs:
             --volume "./package/appimage:/build" --privileged
           run: |
             export LUNE_VERSION=0.7.5
-            export SYSTEM_ARCH=${{ matrix.arch }}
+            echo "Running build on debian linux $(uname -m)"
 
             apt update
             apt install imagemagick file desktop-file-utils curl wget dpkg-dev unzip fuse libfuse2 -y
             
-            wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-$SYSTEM_ARCH.AppImage -O /usr/bin/appimagetool
+            wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-$(uname -m).AppImage -O /usr/bin/appimagetool
             chmod a+x /usr/bin/appimagetool
             
             cd /build/lune.AppDir
