@@ -1,0 +1,52 @@
+name: Build Lune AppImage
+
+on:
+  schedule:
+    - cron:  '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        arch: ["x86_64", "aarch64"]
+    
+    name: Build the AppImage 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Runner info
+        run: uname -ar
+      
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+
+      - name: AppImage routine
+        uses: lalten/run-on-arch-action@amd64-support
+        id: buildimg
+        with:
+          arch: ${{ matrix.arch }}
+          distro: buster
+          dockerRunArgs: |
+            --volume "./package/appimage:/build" --privileged
+          run: |
+            export LUNE_VERSION=0.7.5
+            export SYSTEM_ARCH=${{ matrix.arch }}
+
+            apt update
+            apt install imagemagick file desktop-file-utils curl wget dpkg-dev unzip fuse libfuse2 -y
+            
+            wget https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-$SYSTEM_ARCH.AppImage -O /usr/bin/appimagetool
+            chmod a+x /usr/bin/appimagetool
+            
+            cd /build/lune.AppDir
+            ARCH=$(uname -m) /usr/bin/appimagetool .
+            mv ./lune-*.AppImage  ../out/lune-$LUNE_VERSION.glibc2.34-$(uname -m).AppImage
+
+      - name: Upload generated images
+        uses: actions/upload-artifact@v3
+        with:
+          name: lune-0.7.5.glibc2.34-${{ matrix.arch }}.AppImage
+          path: ./out/lune-0.7.5.glibc2.34-${{ matrix.arch }}.AppImage
