@@ -43,6 +43,8 @@ jobs:
             
             cd /build/lune.AppDir
             ARCH=$(uname -m) /usr/bin/appimagetool .
+            
+            mkdir ../out
             mv ./lune-*.AppImage  ../out/lune-$LUNE_VERSION.glibc2.34-$(uname -m).AppImage
 
       - name: Upload generated images
