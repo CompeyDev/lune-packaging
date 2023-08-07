@@ -14,9 +14,16 @@ For more information on lune, see [filiptibell/lune](https://github.com/filiptib
 
 ## Installation
 ### Homebrew
-Since lune has its cask published to Homebrew core, it can be installed with:
+Since lune has its cask published to Homebrew core, it can be installed as such:
+
+- From precompiled binaries:
 ```console
 brew install lune
+```
+
+- From source:
+```console
+brew install lune --build-from-source
 ```
 
 ### AUR
