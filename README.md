@@ -5,6 +5,7 @@ For more information on lune, see [filiptibell/lune](https://github.com/filiptib
 
 | Platform | Status                                                                                                                                                                    |
 |----------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Homebrew      | ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/CompeyDev/lune-packaging/homebrew_test.yaml?logo=apple&label=%20&color=black) |
 | AUR      | ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/CompeyDev/lune-packaging/aur_test.yaml?logo=archlinux&label=%20&color=black) |
 | Scoop    | ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/CompeyDev/lune-packaging/scoop_test.yaml?logo=windows&logoColor=blue&label=%20&color=black) |
 | AppImage    | ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/CompeyDev/lune-packaging/appimage.yaml?logo=linux&logoColor=yellow&label=%20&color=black) |
@@ -12,6 +13,12 @@ For more information on lune, see [filiptibell/lune](https://github.com/filiptib
 
 
 ## Installation
+### Homebrew
+Since lune has its cask published to Homebrew core, it can be installed with:
+```console
+brew install lune
+```
+
 ### AUR
 ```console
 yay -S lune
