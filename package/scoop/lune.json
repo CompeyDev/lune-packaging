@@ -9,7 +9,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/filiptibell/lune/releases/download/v0.7.6/lune-0.7.6-windows-x86_64.zip",
-            "hash": "601e8050d711c4393da06f2c63ee8a45574901e40a03435f0098e130a23a5cec"
+            "hash": "ee682e59b9e8d62a93eb3dd46d65b179b0e2cac9ea01b6396ebf466e72cef3e2"
         }
     },
     "bin": "lune.exe",
