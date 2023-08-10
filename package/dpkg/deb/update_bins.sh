@@ -18,7 +18,10 @@ do
 
     dl_uri=$(grep -E "https.*lune-.*linux-$arch.zip" <<< $API_RESP | cut -d '"' -f4)
 
-    wget $dl_uri -O $dir/usr/bin/lune
+    wget $dl_uri -O lune-$arch.zip 
+
+    unzip "lune-$arch.zip" -d $dir/usr/bin/
+    rm -rf "lune-$arch"
 done
 
 find . -maxdepth 1 -mindepth 1 -type d -exec dpkg --build {} \;
