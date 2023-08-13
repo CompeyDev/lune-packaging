@@ -2,6 +2,10 @@
 
 set -e
 
+if [ $ACTIONS_RUNNER_DEBUG  == "true" ]; then
+  set -x
+fi
+
 source ./utils.sh
 
 function build() {
