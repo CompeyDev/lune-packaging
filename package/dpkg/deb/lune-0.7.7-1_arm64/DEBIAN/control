@@ -1,0 +1,7 @@
+Package: lune
+Version: 0.7.7
+Maintainer: Erica Marigold <hi@devcomp.xyz>
+Depends: glibc-source
+Architecture: arm64
+Homepage: http://lune-org.github.io/docs
+Description: A standalone Luau script runtime

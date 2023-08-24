@@ -1,6 +1,20 @@
 Package: lune
 Maintainer: Erica Marigold <hi@devcomp.xyz>
 Architecture: arm64
+Version: 0.7.7
+Depends: glibc-source
+Filename: pool/main/l/lune/lune-0.7.7-1_arm64.deb
+Size: 3680228
+MD5sum: bb2c126f62ac4d758fa969c502d6de4c
+SHA1: d893346f632ac751248dea86ede2341300f8be07
+SHA256: 678fa538c8d5db5b33fe0bebd680ef72eb632b778d23441707d34e37f5e124a5
+SHA512: f9ee574db62c4925a5016e0e645b8e104cfbd8b0fed42ff78d516ab1a6f4cf0556d70fb4ae377599ead083d072e19ea2b6ca4773ba9deed809f4af3e950fa79c
+Description: A standalone Luau script runtime
+Homepage: http://lune-org.github.io/docs
+
+Package: lune
+Maintainer: Erica Marigold <hi@devcomp.xyz>
+Architecture: arm64
 Version: 0.7.6
 Depends: glibc-source
 Filename: pool/main/l/lune/lune-0.7.6-1_arm64.deb
@@ -18,11 +32,11 @@ Architecture: arm64
 Version: 0.7.5
 Depends: glibc-source
 Filename: pool/main/l/lune/lune-0.7.5-1_arm64.deb
-Size: 3239020
-MD5sum: cc3bb0b61d6e8f5c9e18dec88aaed9ac
-SHA1: f190f68247e4c9a900653a502d3b5df81e520b82
-SHA256: 10d4a79272809d9e92a0c9b21ae4d352390dc43a3d1cbc0a6f11b57f56d59426
-SHA512: abbf90028059ab5cc66db7d0a595aaeda42a1bb60a581a5b13afb82f5cf642f000771bc9e2b32cfa48da3625289673884490e7c1e5cb400180ba9c257746b27a
+Size: 3846162
+MD5sum: e529285e72360b404dae26a4c637bdb7
+SHA1: bfd64bdad047208a81276691c34786c88e0fc23e
+SHA256: 7db0b187a9a0bee4368451c79ca5b672131684a78672bd47832472361023249c
+SHA512: 3a9398af6bde05eca5ac50000f36d089babdc993ae640bdc068b7a4f2445c689947a7128fc33307b4c0825c8daa5c84141bfde9122c0b0dd8bd7404515c2bbf3
 Description: A standalone Luau script runtime
 Homepage: http://lune-org.github.io/docs
 
