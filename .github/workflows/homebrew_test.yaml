@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   
 jobs:
-  test_precompiled:
+  test:
     runs-on: macos-latest
     steps:
       - name: Set up Homebrew
@@ -12,14 +12,4 @@ jobs:
         uses: Homebrew/actions/setup-homebrew@master
 
       - name: Test
-        run: brew install lune && lune || exit 0
-
-  test_source:
-    runs-on: macos-latest
-    steps:
-      - name: Set up Homebrew
-        id: set-up-homebrew
-        uses: Homebrew/actions/setup-homebrew@master
-
-      - name: Test
-        run: brew install lune --build-from-source && lune || exit 0
+        run: brew install lune && brew test lune && lune
