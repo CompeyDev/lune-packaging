@@ -22,6 +22,10 @@ jobs:
       - name: Update lune.COMMIT
         run: git rev-parse HEAD | cut -c -7 > ../lune.COMMIT
         working-directory: "lune-src"
+
+      - name: Update lune.VERSION
+        run: git describe --tags --abbrev=0 > ../lune.VERSION
+        working-directory: "lune-src"
         
       - name: Push changes
         run: |-
