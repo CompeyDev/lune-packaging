@@ -17,7 +17,8 @@ export PATH="$PATH:$ANDROID_NDK/toolchains/llvm/prebuilt/linux-x86_64/bin/"
 
 cp ../package/android/.cargo/config $HOME/.cargo/config
 
-rustup toolchain install aarch64-linux-android
+rustup toolchain install stable-x86_64-unknown-linux-gnu
+rustup target add aarch64-linux-android
 
 mv $ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android21-clang $ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android-clang 
 mv $ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/llvm-ar $ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-android-ar
