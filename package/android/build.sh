@@ -27,6 +27,7 @@ mv $ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/bin/aarch64-linux-and
 cargo build --release --target aarch64-linux-android
 
 # Create outputs
+mkdir build
 cp $ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_shared.so build/libc++_shared.so
 cp target/aarch64-linux-android/release/lune build/lune
 
