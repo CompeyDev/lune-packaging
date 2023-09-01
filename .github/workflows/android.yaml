@@ -23,9 +23,13 @@ jobs:
       - name: Build routine
         run: "chmod +x package/android/build.sh && package/android/build.sh"
 
-      - name: Create build artifacts
-        uses: actions/upload-artifact@v3
+      - name: Create release
+        uses: "marvinpinto/action-automatic-releases@latest"
         with:
-          name: lune-$LUNE_VERSION-aarch64-linux-android.zip
-          path: lune-aarch64-linux-android.zip
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "$LUNE_VERSION"
+          draft: true
+          title: "Lune $LUNE_VERSION (Android)"
+          files: |
+            lune-src/lune-*.zip
             
