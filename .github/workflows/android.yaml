@@ -1,0 +1,26 @@
+name: Update Lune Sources 
+
+on:
+  schedule:
+    - cron:  '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    name: Update the lune-src submodule 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Install rustup
+        run: "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
+
+      - name: Build routine
+        run: "chmod +x ../package/android/build.sh && ../package/android/build.sh"
+            
