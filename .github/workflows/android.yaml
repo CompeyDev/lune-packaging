@@ -6,8 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  update:
-    name: Update the lune-src submodule 
+  build: 
     runs-on: ubuntu-latest
 
     steps:
