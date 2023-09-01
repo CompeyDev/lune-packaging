@@ -1,4 +1,4 @@
-name: Update Lune Sources 
+name: Build for Android
 
 on:
   schedule:
