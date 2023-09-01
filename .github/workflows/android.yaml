@@ -22,4 +22,9 @@ jobs:
 
       - name: Build routine
         run: "chmod +x package/android/build.sh && package/android/build.sh"
+
+      - name: Create build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          path: lune-src/build/lune-*.zip
             
