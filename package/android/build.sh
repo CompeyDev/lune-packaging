@@ -32,3 +32,5 @@ cp $ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch
 cp target/aarch64-linux-android/release/lune build/lune
 
 zip "lune-$current_ver-aarch64-linux-android.zip" build/* 
+
+echo $current_ver > ../build.VERSION
