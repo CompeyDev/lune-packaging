@@ -27,9 +27,9 @@ jobs:
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "$LUNE_VERSION"
+          automatic_release_tag: "${{ env.LUNE_VERSION }}"
           draft: true
-          title: "Lune $LUNE_VERSION (Android)"
+          title: "Lune ${{ env.LUNE_VERSION }} (Android)"
           files: |
             lune-src/lune-*.zip
             
