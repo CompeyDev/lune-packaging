@@ -31,7 +31,7 @@ mkdir build
 cp $ANDROID_NDK_HOME/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/libc++_shared.so build/libc++_shared.so
 cp target/aarch64-linux-android/release/lune build/lune
 
-zip "lune-aarch64-linux-android.zip" build/* 
+zip "lune-$current_ver-aarch64-linux-android.zip" build/* 
 
 echo $current_ver > ../build.VERSION
 
