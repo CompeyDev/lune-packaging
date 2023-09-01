@@ -18,7 +18,7 @@ jobs:
           fetch-tags: true
 
       - name: Install rustup
-        run: "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
+        run: "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y"
 
       - name: Build routine
         run: "chmod +x ../package/android/build.sh && ../package/android/build.sh"
