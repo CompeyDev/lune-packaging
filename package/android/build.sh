@@ -34,3 +34,12 @@ cp target/aarch64-linux-android/release/lune build/lune
 zip "lune-aarch64-linux-android.zip" build/* 
 
 echo $current_ver > ../build.VERSION
+
+cd ..
+git add build.VERSION
+
+git diff
+git config --global user.email "hi@devcomp.xyz"
+git config --global user.name "CI"
+git diff --quiet || (git add -u && git commit -m "chore: update build.VERSION")
+git push 
