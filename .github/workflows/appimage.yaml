@@ -32,7 +32,7 @@ jobs:
           dockerRunArgs: |
             --volume "./package/appimage:/build" --privileged
           run: |
-            export LUNE_VERSION=0.7.5
+            export LUNE_VERSION=0.7.7
             echo "Running build on debian linux $(uname -m)"
 
             apt update
