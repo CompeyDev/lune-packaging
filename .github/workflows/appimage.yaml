@@ -50,5 +50,5 @@ jobs:
       - name: Upload generated images
         uses: actions/upload-artifact@v3
         with:
-          name: lune-0.7.5.glibc2.34-${{ matrix.arch }}.AppImage
-          path: ./package/appimage/out/lune-0.7.5.glibc2.34-${{ matrix.arch }}.AppImage
+          name: lune-0.7.7.glibc2.34-${{ matrix.arch }}.AppImage
+          path: ./package/appimage/out/lune-0.7.7.glibc2.34-${{ matrix.arch }}.AppImage
