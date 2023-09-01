@@ -26,5 +26,6 @@ jobs:
       - name: Create build artifacts
         uses: actions/upload-artifact@v3
         with:
-          path: lune-src/build/lune-*.zip
+          name: lune-$LUNE_VERSION-aarch64-linux-android.zip
+          path: lune-aarch64-linux-android.zip
             
