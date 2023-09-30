@@ -3,27 +3,6 @@
 version = 3
 
 [[package]]
-name = "action"
-version = "0.1.0"
-dependencies = [
- "actions-core",
- "anyhow",
- "better-panic",
- "colored",
- "directories",
- "home",
- "serde",
- "serde_json",
- "tracing",
- "tracing-core",
- "tracing-subscriber",
- "tracing-unwrap",
- "ureq",
- "url",
- "zip",
-]
-
-[[package]]
 name = "actions-core"
 version = "0.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -708,6 +687,27 @@ dependencies = [
  "itoa",
  "ryu",
  "serde",
+]
+
+[[package]]
+name = "setup-lune"
+version = "0.1.0"
+dependencies = [
+ "actions-core",
+ "anyhow",
+ "better-panic",
+ "colored",
+ "directories",
+ "home",
+ "serde",
+ "serde_json",
+ "tracing",
+ "tracing-core",
+ "tracing-subscriber",
+ "tracing-unwrap",
+ "ureq",
+ "url",
+ "zip",
 ]
 
 [[package]]
