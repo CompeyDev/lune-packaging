@@ -1,12 +1,11 @@
+use colored::Colorize;
 use std::fmt;
-use tracing_core::{Subscriber, Event, Level};
+use tracing_core::{Event, Level, Subscriber};
 use tracing_subscriber::fmt::{
     format::{self, FormatEvent, FormatFields},
-    FmtContext,
-    FormattedFields,
+    FmtContext, FormattedFields,
 };
 use tracing_subscriber::registry::LookupSpan;
-use colored::Colorize;
 
 pub struct LogFormatter;
 
@@ -21,7 +20,6 @@ where
         mut writer: format::Writer<'_>,
         event: &Event<'_>,
     ) -> fmt::Result {
-
         let meta = event.metadata();
 
         let scope = match meta.level() {
@@ -47,10 +45,7 @@ where
             for span in scope.from_root() {
                 write!(writer, "{}", span.name())?;
                 let ext = span.extensions();
-                let fields = &ext
-                    .get::<FormattedFields<N>>()
-                    .unwrap();
-
+                let fields = &ext.get::<FormattedFields<N>>().unwrap();
 
                 if !fields.is_empty() {
                     write!(writer, "{{{}}}", fields)?;

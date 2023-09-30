@@ -1,14 +1,19 @@
 use std::fs::File;
 
+use actions_core as core;
 use setup_lune::{
     download::{download_release, install_lune},
     fmt::LogFormatter,
 };
-use actions_core as core;
 use tracing::Level;
 use tracing_unwrap::ResultExt;
 
 fn main() {
+    let version = match core::input("version") {
+        Ok(val) => Some(val),
+        Err(_) => None,
+    };
+
     if cfg!(debug_assertions) {
         better_panic::install();
     }
@@ -22,7 +27,7 @@ fn main() {
         .init();
 
     let (zip_path, meta) =
-        download_release().expect_or_log("failed to download latest lune release");
+        download_release(version).expect_or_log("failed to download latest lune release");
 
     install_lune(
         File::open(&zip_path).expect(

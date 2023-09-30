@@ -68,19 +68,35 @@ fn parse_release_data(data: &LuneReleaseData) -> LuneReleaseFetched {
         version,
         download,
         artifact_name,
-        raw: data.clone(),
+        raw: Some(data.clone()),
     }
 }
 
-pub fn download_release() -> Result<(PathBuf, LuneReleaseFetched)> {
+pub fn download_release(version: Option<String>) -> Result<(PathBuf, LuneReleaseFetched)> {
     const TARGET: &str = "download::download_release";
 
     tracing::info!(target: TARGET, "Initializing routine");
 
-    let parsed_release_data =
-        parse_release_data(&GitHub::new(("filiptibell", "lune")).fetch_releases()?);
+    let parsed_release_data: LuneReleaseFetched;
 
-    tracing::info!(target: TARGET, "Received API resp and parsed release data");
+    if let Some(ver) = version {
+        let artifact_name = format!("lune-{ver}-{}-{}.zip", env::consts::OS, env::consts::ARCH);
+
+        parsed_release_data = LuneReleaseFetched {
+            version: ver.to_string(),
+            download: format!(
+                "https://github.com/filiptibell/lune/releases/download/v{ver}/{artifact_name}"
+            ),
+            artifact_name,
+            raw: None,
+        }
+    } else {
+        parsed_release_data =
+            parse_release_data(&GitHub::new(("filiptibell", "lune")).fetch_releases()?);
+
+        tracing::info!(target: TARGET, "Received API resp and parsed release data");
+    }
+
     tracing::info!(target: TARGET, "Got lune {}", parsed_release_data.version);
 
     let fetcher = Fetcher::new();
