@@ -1,4 +1,4 @@
-use std::fs::File;
+use std::fs::{read_dir, remove_dir_all, remove_file, DirEntry, File};
 
 use actions_core as core;
 use setup_lune::{
@@ -33,4 +33,29 @@ fn main() {
 		meta,
 	)
 	.expect_or_log("failed to install lune. did we not have perms to write to the required directories?");
+
+	// Cleanup downloaded & unzipped stuff
+	let to_remove = read_dir(".")
+		.expect_or_log("failed to read current working directory")
+		.filter(|f| {
+			f.as_ref()
+				.expect_or_log("failed to read file of directory")
+				.file_name()
+				.to_string_lossy()
+				.starts_with("lune-")
+		})
+		.map(|elem| elem.unwrap())
+		.collect::<Vec<DirEntry>>();
+
+	for entry in to_remove {
+		let file_type = entry.file_type().expect_or_log("failed to get filetype for cleanup");
+
+		if file_type.is_file() {
+			remove_file(entry.path()).expect("failed to cleanup after installation!")
+		}
+
+		if file_type.is_dir() {
+			remove_dir_all(entry.path()).expect("failed to cleanup after installation!")
+		}
+	}
 }
