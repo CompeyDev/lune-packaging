@@ -3,7 +3,10 @@ name = "setup-lune"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[profile.release]
+opt-level = "z"
+strip = true
+lto = true
 
 [dependencies]
 actions-core = "0.0.2"
