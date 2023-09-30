@@ -24,6 +24,7 @@ jobs:
         
       - name: Push changes
         run: |-
+          git add -A
           git diff
           git config --global user.email "hi@devcomp.xyz"
           git config --global user.name "CI"
