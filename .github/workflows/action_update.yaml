@@ -1,8 +1,7 @@
 name: Update setup-lune Repository
 
 on:
-  schedule:
-    - cron:  '0 0 * * *'
+  push:
   workflow_dispatch:
 
 jobs:
@@ -25,7 +24,7 @@ jobs:
           git diff
           git config --global user.email "hi@devcomp.xyz"
           git config --global user.name "CI"
-          git diff --quiet || (git add -u && git commit -m "chore: update lune sources")
+          git diff --quiet || (git add -u && git commit -m "sync: CompeyDev/lune-packaging (${{ github.sha }})")
           git push 
         working-directory: "setup-lune"
             
