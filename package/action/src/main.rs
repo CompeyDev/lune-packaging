@@ -28,11 +28,15 @@ fn main() {
 
 	let (zip_path, meta) = download_release(version).expect_or_log("failed to download latest lune release");
 
-	install_lune(
+	let mut install_path = install_lune(
 		File::open(&zip_path).unwrap_or_else(|_| panic!("failed to open downloaded lune release zip file @ {}", zip_path.to_string_lossy())),
 		meta,
 	)
 	.expect_or_log("failed to install lune. did we not have perms to write to the required directories?");
+
+	install_path.pop();
+
+	core::add_path(install_path.to_string_lossy());
 
 	// Cleanup downloaded & unzipped stuff
 	let to_remove = read_dir(".")
