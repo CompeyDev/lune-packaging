@@ -1,0 +1,31 @@
+name: Update setup-lune Repository
+
+on:
+  schedule:
+    - cron:  '0 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    name: Update setup-lune action 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Clone remote
+        run: git clone https://github.com/CompeyDev/setup-lune
+
+      - name: Update sources
+        run: rm -rf ./.git/ && shopt -s dotglob && cp -r package/action/* setup-lune/
+        
+      - name: Push changes
+        run: |-
+          git diff
+          git config --global user.email "hi@devcomp.xyz"
+          git config --global user.name "CI"
+          git diff --quiet || (git add -u && git commit -m "chore: update lune sources")
+          git push 
+        working-directory: "setup-lune"
+            
