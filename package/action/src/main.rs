@@ -1,6 +1,7 @@
 use std::fs::File;
 
 use action::download::{download_release, install_lune};
+use actions_core as core;
 use tracing::Level;
 use tracing_unwrap::ResultExt;
 
@@ -8,9 +9,11 @@ fn main() {
     if cfg!(debug_assertions) {
         better_panic::install();
     } else {
-        // Check for is_debug in github actions
         tracing_subscriber::fmt()
-            .with_max_level(Level::DEBUG)
+            .with_max_level(match core::is_debug() {
+                true => Level::DEBUG,
+                false => Level::ERROR,
+            })
             .init();
     }
 
