@@ -12,7 +12,7 @@ fn main() {
         tracing_subscriber::fmt()
             .with_max_level(match core::is_debug() {
                 true => Level::DEBUG,
-                false => Level::ERROR,
+                false => Level::INFO,
             })
             .init();
     }
