@@ -1,5 +1,12 @@
 {
-    "rust-analyzer.linkedProjects": [
-        "./Cargo.toml"
-    ]
+	"rust-analyzer.check.command": "clippy",
+	"rust-analyzer.linkedProjects": ["./Cargo.toml"],
+	"editor.formatOnSave": true,
+	"prettier.tabWidth": 2,
+	"[json][jsonc][markdown][yaml]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[rust]": {
+		"editor.defaultFormatter": "rust-lang.rust-analyzer"
+	}
 }
