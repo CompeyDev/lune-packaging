@@ -1,22 +1,30 @@
 use std::fs::File;
 
-use action::{download::{download_release, install_lune}, fmt::LogFormatter};
+use action::{
+    download::{download_release, install_lune},
+    fmt::LogFormatter,
+};
 use actions_core as core;
 use tracing::Level;
 use tracing_unwrap::ResultExt;
 
 fn main() {
+    println!(
+        "debug mode: {}",
+        (core::is_debug() || cfg!(debug_assertions))
+    );
+
     if cfg!(debug_assertions) {
         better_panic::install();
-    } else {
-        tracing_subscriber::fmt()
-            .with_max_level(match core::is_debug() {
-                true => Level::DEBUG,
-                false => Level::INFO,
-            })
-            .event_format(LogFormatter)
-            .init();
     }
+
+    tracing_subscriber::fmt()
+        .with_max_level(match core::is_debug() || cfg!(debug_assertions) {
+            true => Level::DEBUG,
+            false => Level::INFO,
+        })
+        .event_format(LogFormatter)
+        .init();
 
     let (zip_path, meta) =
         download_release().expect_or_log("failed to download latest lune release");
