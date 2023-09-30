@@ -1,0 +1,16 @@
+name: "setup-lune"
+description: "Installs lune - the standalone luau runtime"
+branding:
+  icon: "terminal"
+  color: "purple"
+inputs:
+  version:
+    description: "Version of lune to install, defaults to latest"
+    required: false
+runs:
+  using: "composite"
+  steps:
+    - run: "wget https://github.com/CompeyDev/setup-lune/releases/download/latest/setup-lune-${{ runner.os }}-x86_64.zip"
+    - run: "unzip setup-lune-${{ runner.os }}-x86_64.zip"
+    - run: "chmod +X ./setup-lune && ./setup-lune"
+    - run: "rm -rf ./setup-lune"

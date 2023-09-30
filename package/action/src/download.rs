@@ -124,7 +124,7 @@ pub fn download_release(version: Option<String>) -> Result<(PathBuf, LuneRelease
 	Ok((PathBuf::from(&parsed_release_data.artifact_name), parsed_release_data))
 }
 
-pub fn install_lune(lune_archive_reader: impl Read + Seek, meta: LuneReleaseFetched) -> Result<()> {
+pub fn install_lune(lune_archive_reader: impl Read + Seek, meta: LuneReleaseFetched) -> Result<PathBuf> {
 	const TARGET: &str = "download::install_lune";
 
 	tracing::info!(target: TARGET, "Initializing routine");
@@ -171,5 +171,5 @@ pub fn install_lune(lune_archive_reader: impl Read + Seek, meta: LuneReleaseFetc
 		lune_bin_path.to_string_lossy()
 	);
 
-	Ok(())
+	Ok(lune_bin_path)
 }
