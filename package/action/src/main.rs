@@ -1,6 +1,6 @@
 use std::fs::File;
 
-use action::download::{download_release, install_lune};
+use action::{download::{download_release, install_lune}, fmt::LogFormatter};
 use actions_core as core;
 use tracing::Level;
 use tracing_unwrap::ResultExt;
@@ -14,6 +14,7 @@ fn main() {
                 true => Level::DEBUG,
                 false => Level::INFO,
             })
+            .event_format(LogFormatter)
             .init();
     }
 
