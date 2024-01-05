@@ -12,6 +12,10 @@ runs:
   shell: sh
   steps:
     - run: "wget https://github.com/CompeyDev/setup-lune/releases/download/latest/setup-lune-${{ runner.os }}-x86_64.zip"
+      shell: bash
     - run: "unzip setup-lune-${{ runner.os }}-x86_64.zip"
+      shell: bash
     - run: "chmod +X ./setup-lune && ./setup-lune"
+      shell: bash
     - run: "rm -rf ./setup-lune"
+      shell: bash
