@@ -5,8 +5,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  update:
-    name: Update setup-lune action 
+  test:
+    name: Test setup-lune action 
     runs-on: ubuntu-latest
 
     steps:
