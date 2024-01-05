@@ -9,7 +9,6 @@ inputs:
     required: false
 runs:
   using: "composite"
-  shell: sh
   steps:
     - run: "wget https://github.com/CompeyDev/setup-lune/releases/download/latest/setup-lune-${{ runner.os }}-x86_64.zip"
       shell: bash
