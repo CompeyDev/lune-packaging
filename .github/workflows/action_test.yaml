@@ -1,0 +1,20 @@
+name: Test setup-lune Action
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  update:
+    name: Update setup-lune action 
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run action
+        uses: CompeyDev/setup-lune@main
+
+      - name: Run lune
+        run: lune --help
