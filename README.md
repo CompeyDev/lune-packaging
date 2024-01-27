@@ -1,5 +1,5 @@
 This repository houses the required manifests and build scripts for lune packaging. 
-For more information on lune, see [filiptibell/lune](https://github.com/filiptibell/lune).
+For more information on lune, see [lune-org/lune](https://github.com/lune-org/lune).
 
 ## Packaging Statuses
 
