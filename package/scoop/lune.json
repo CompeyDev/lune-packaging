@@ -8,7 +8,7 @@
   },
   "architecture": {
     "64bit": {
-      "url": "https://github.com/filiptibell/lune/releases/download/v0.8.0/lune-0.8.0-windows-x86_64.zip",
+      "url": "https://github.com/filiptibell/lune/releases/download/v0.8.1/lune-0.8.1-windows-x86_64.zip",
       "hash": "efb4c009ac652703cec91df8fc2865ff34daa6941abd1f5b37f99b71be2492d6"
     }
   },
