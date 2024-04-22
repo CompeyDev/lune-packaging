@@ -2,6 +2,8 @@
 
 set -e 
 
+export CARGO_TERM_COLOR=always
+
 declare -a aur_packages=("lune-bin" "lune-git" "lune")
 root_dir=$(pwd)
 
