@@ -13,7 +13,7 @@ do
   echo "##### Building $package #####"
   echo "#############################"
   
-  cd "$package" && makepkg || exit 1
+  cd "$package" && makepkg -s || exit 1
 
   cd "$root_dir"
 done
