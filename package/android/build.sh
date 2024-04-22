@@ -3,9 +3,11 @@
 set -e
 
 cd lune-src
-current_ver=$(git describe --tags --abbrev=0)
+current_ver=$(git describe --tags --abbrev=0 | tr -d '\n')
 
 [[ $(cat ../build.VERSION) == $current_ver ]] && echo "[!] Already at latest build, skipping" && exit 0
+
+sudo apt install build-essential cmake
 
 wget https://dl.google.com/android/repository/android-ndk-r25c-linux.zip && unzip android-ndk-*.zip
 mv android-ndk-r25c $HOME/android-ndk
