@@ -9,7 +9,7 @@ jobs:
   build:
     strategy:
       matrix:
-        arch: ["x86_64", "aarch64"]
+        arch: ["x86_64"]
     
     name: Build the AppImage 
     runs-on: ubuntu-latest
