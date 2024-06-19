@@ -19,7 +19,7 @@ await build({
 	package: {
 		name: consts.name,
 		version: consts.version,
-		description: "",
+		description: "A standalone luau runtime",
 		license: "MPL-2.0",
 		repository: {
 			type: "git",
