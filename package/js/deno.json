@@ -1,0 +1,6 @@
+{
+  "tasks": {
+    "lune": "deno run --allow-all lune.ts",
+    "build": "deno run --allow-all build.ts"
+  }
+}
