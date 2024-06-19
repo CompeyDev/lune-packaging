@@ -1,6 +1,8 @@
 {
-  "tasks": {
-    "lune": "deno run --allow-all bin/lune.ts",
-    "build": "deno run --allow-all build.ts"
-  }
+	"tasks": {
+		"lune": "deno run --allow-all bin/lune.ts",
+		"build": "deno run --allow-run --allow-write=npm/ --allow-read --allow-env --allow-sys build.ts",
+		"clean": "deno run --allow-write=npm/ --allow-read --allow-env npm:rimraf npm/",
+		"fmt": "deno fmt --use-tabs=true --ignore=LICENSE.md,npm/"
+	}
 }

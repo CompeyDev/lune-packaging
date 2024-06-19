@@ -19,13 +19,13 @@ await checkAndInstallLune();
 */
 // deno-lint-ignore no-deprecated-deno-api
 const luneStatus = await Deno.run({
-  cmd: [
-    path.join(BASE_PATH, consts.version, "lune" + EXE_EXTENSION),
-    ...Deno.args,
-  ],
-  stdout: "inherit",
-  stderr: "inherit",
-  stdin: "inherit",
+	cmd: [
+		path.join(BASE_PATH, consts.version, "lune" + EXE_EXTENSION),
+		...Deno.args,
+	],
+	stdout: "inherit",
+	stderr: "inherit",
+	stdin: "inherit",
 }).status();
 
 Deno.exit(luneStatus.signal);
