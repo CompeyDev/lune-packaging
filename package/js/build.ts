@@ -14,7 +14,7 @@ await build({
   outDir: "./npm",
   shims: {
     deno: true,
-    // undici: true,
+    undici: true,
   },
   package: {
     name: consts.name,
@@ -34,5 +34,5 @@ await build({
     Deno.copyFileSync("README.md", "npm/README.md");
     Deno.copyFileSync("consts.toml", "npm/consts.toml");
   },
-  typeCheck: false // FIXME: This is a problem on dnt's end while importing things
+  typeCheck: false, // FIXME: This is a problem on dnt's end while importing things
 });

@@ -1,16 +1,16 @@
-// import { decompress as unzip } from "jsr:@fakoua/zip-ts@^1.3.1";
+import * as path from "jsr:@std/path";
 import { unzip } from "https://deno.land/x/nzip@v1.2.1/mod.ts";
 import { fetchLuneReleases } from "./github.ts";
-import consts from "./consts.ts";
+import consts, { BASE_PATH } from "./consts.ts";
 
 export const LUNE_VERSION = consts.version;
 export const EXE_EXTENSION = Deno.build.os == "windows" ? ".exe" : "";
 
 async function installLune() {
-  let ghAuthToken;
+  let ghAuthToken: string | undefined;
 
   try {
-    /* 
+    /*
       Ideally, this would look like this:
 
         new TextDecoder().decode(
@@ -19,14 +19,16 @@ async function installLune() {
             stdout: "piped",
           }).output()).stdout,
         );
-      
+
       However, dnt is yet to support Deno.command
     */
-    // deno-lint-ignore no-deprecated-deno-api
-    ghAuthToken = new TextDecoder().decode(await Deno.run({
-      cmd: ["gh", "auth", "token"],
-      stdout: "piped"
-    }).output())
+    ghAuthToken = new TextDecoder().decode(
+      // deno-lint-ignore no-deprecated-deno-api
+      await Deno.run({
+        cmd: ["gh", "auth", "token"],
+        stdout: "piped",
+      }).output(),
+    );
   } catch (_) {
     // Don't use an auth token, be subjected to GitHub ratelimit
   }
@@ -52,7 +54,7 @@ async function installLune() {
   }
 
   const zipFile = await Deno.makeTempFile({ suffix: ".zip" });
-  const finalDest = Deno.cwd();
+  const finalDestDir = path.join(BASE_PATH, consts.version);
 
   const binaryBlob = resp.body!;
   await binaryBlob.pipeTo(
@@ -62,15 +64,15 @@ async function installLune() {
     )).writable,
   );
 
-  const binaryPaths = await unzip(zipFile, finalDest, {
+  const binaryPaths = await unzip(zipFile, finalDestDir, {
     useWebWorkers: true,
   });
 
-  if (Deno.build.os !== "windows") await Deno.chmod(binaryPaths[0], 0o777)
+  if (Deno.build.os !== "windows") await Deno.chmod(binaryPaths[0], 0o777);
 }
 
 export async function checkAndInstallLune() {
-  const luneExePath = Deno.cwd() + "/lune" + EXE_EXTENSION;
+  const luneExePath = path.join(BASE_PATH, consts.version, "lune" + EXE_EXTENSION);
 
   const luneExists = await Deno.lstat(luneExePath).then(
     (stat) => {
