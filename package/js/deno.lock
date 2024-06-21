@@ -10,6 +10,7 @@
       "jsr:@std/bytes@^0.218.2": "jsr:@std/bytes@0.218.2",
       "jsr:@std/collections@^0.224.0": "jsr:@std/collections@0.224.2",
       "jsr:@std/fmt@^0.218.2": "jsr:@std/fmt@0.218.2",
+      "jsr:@std/fs": "jsr:@std/fs@0.218.2",
       "jsr:@std/fs@0.218.2": "jsr:@std/fs@0.218.2",
       "jsr:@std/fs@^0.218.2": "jsr:@std/fs@0.218.2",
       "jsr:@std/io@^0.218.2": "jsr:@std/io@0.218.2",
@@ -709,6 +710,7 @@
     }
   },
   "redirects": {
+    "https://deno.land/x/dir/home_dir/mod.ts": "https://deno.land/x/dir@1.5.2/home_dir/mod.ts",
     "https://deno.land/x/dnt/mod.ts": "https://deno.land/x/dnt@0.40.0/mod.ts",
     "https://deno.land/x/nzip/mod.ts": "https://deno.land/x/nzip@v1.2.1/mod.ts"
   },
@@ -990,6 +992,7 @@
     "https://deno.land/x/deno_cache@0.6.2/mod.ts": "b4004287e1c6123d7f07fe9b5b3e94ce6d990c4102949a89c527c68b19627867",
     "https://deno.land/x/deno_cache@0.6.2/util.ts": "f3f5a0cfc60051f09162942fb0ee87a0e27b11a12aec4c22076e3006be4cc1e2",
     "https://deno.land/x/dir@1.5.1/data_local_dir/mod.ts": "91eb1c4bfadfbeda30171007bac6d85aadacd43224a5ed721bbe56bc64e9eb66",
+    "https://deno.land/x/dir@1.5.2/home_dir/mod.ts": "6128b52da60124f78a4fc176cd4687a073e9b0331803dd602dfb685fa4fe4ae1",
     "https://deno.land/x/dnt@0.40.0/lib/compiler.ts": "7f4447531581896348b8a379ab94730856b42ae50d99043f2468328360293cb1",
     "https://deno.land/x/dnt@0.40.0/lib/compiler_transforms.ts": "f21aba052f5dcf0b0595c734450842855c7f572e96165d3d34f8fed2fc1f7ba1",
     "https://deno.land/x/dnt@0.40.0/lib/mod.deps.ts": "8d6123c8e1162037e58aa8126686a03d1e2cffb250a8757bf715f80242097597",
