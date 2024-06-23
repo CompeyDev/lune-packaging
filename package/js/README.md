@@ -14,6 +14,4 @@ npm install lune@{VERSION}
 deno install https://raw.githubusercontent.com/CompeyDev/lune-packaging/v{VERSION}/package/js/bin/lune.ts
 ```
 
-> **Note**: Only lune versions starting from lune v0.8.5 are supported for NPM.
-> Pinned deno versions are currently not supported, so you would need to replace
-> the version portion from the script link with main.
+> **Note**: Only lune versions starting from lune v0.8.6 are supported for the packages.
