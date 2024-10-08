@@ -1,14 +1,42 @@
 Package: lune
 Maintainer: Erica Marigold <hi@devcomp.xyz>
 Architecture: arm64
+Version: 0.8.9
+Depends: glibc-source
+Filename: pool/main/l/lune/lune-0.8.9-1_arm64.deb
+Size: 4185720
+MD5sum: 83ac54a4f92778cf92e1816ce8b334ab
+SHA1: a79bbc231448146adb7fca3d76ee4a398e3b5136
+SHA256: a6a13a4cd43fd29880671363fbbbdcc60f69df75bfa9a60445f3b9f37a840355
+SHA512: 398ede97fc6ae03597cb04042a5c3c7e54b5d6fbbb20f10fa45748c1fc90f2b52ab7d628d593e528f474038ca0e4e0335e0d89fea53f5d2a8171a724f82f9cc7
+Description: A standalone Luau script runtime
+Homepage: http://lune-org.github.io/docs
+
+Package: lune
+Maintainer: Erica Marigold <hi@devcomp.xyz>
+Architecture: arm64
+Version: 0.8.8
+Depends: glibc-source
+Filename: pool/main/l/lune/lune-0.8.8-1_arm64.deb
+Size: 4135116
+MD5sum: 8702c32cf6e691ad0cec18fd29507527
+SHA1: 8918872316fbaabca311be8469b4d959be27aa44
+SHA256: d2fab2dc819bb396463f5654668893bf1aad71a76dfc61fbb94f636c1f91d46d
+SHA512: 6e57cedeb79e7fd4790cc765a56253b06ff8115ac967781e0b578bd87ab11619a448a6329672736f8c273917c059368100839679aaaa44a04e68b34945b73012
+Description: A standalone Luau script runtime
+Homepage: http://lune-org.github.io/docs
+
+Package: lune
+Maintainer: Erica Marigold <hi@devcomp.xyz>
+Architecture: arm64
 Version: 0.8.7
 Depends: glibc-source
 Filename: pool/main/l/lune/lune-0.8.7-1_arm64.deb
-Size: 4135824
-MD5sum: 592dc60e68b6d5c7a3ee86ece6abc025
-SHA1: 3391967fc5f9c5af39af0fd3835a87ade1ca8382
-SHA256: 01c2c20a68ec3be9834c591fc8d5e6997383a59e133d28d43045c5ee1a96f3a1
-SHA512: b6f9f71642214e782f92bd1626f58df5043229d2b25dcea25e2a193c42d49eb1de050d6d977a97b0bfe0d03dcb394ae2928c85a3a47d385b710b36ba5ff31803
+Size: 4140908
+MD5sum: 088ca9567e2644df851d5794942e0d75
+SHA1: c3b7728bff45f63302e8050f686998fd57280aee
+SHA256: 943a1fbefc77a8336da261404a66e3fa76a083a795e58cc1272a76417e100846
+SHA512: f120bf32a46fec899d88673f346b5d3c2f5495c490cf0e2ea33150f75db231697a1b0c57020322e2c89befe45f00f20aefa6b7f483695bbc77911a1982707365
 Description: A standalone Luau script runtime
 Homepage: http://lune-org.github.io/docs
 
