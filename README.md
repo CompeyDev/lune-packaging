@@ -10,6 +10,7 @@ For more information on lune, see [lune-org/lune](https://github.com/lune-org/lu
 | Scoop    | ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/CompeyDev/lune-packaging/scoop_test.yaml?logo=windows&logoColor=blue&label=%20&color=black) |
 | AppImage    | ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/CompeyDev/lune-packaging/appimage.yaml?logo=linux&logoColor=yellow&label=%20&color=black) |
 | APT    | ![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/CompeyDev/lune-packaging/apt.yaml?logo=debian&logoColor=red&label=%20&color=black) |
+| COPR    | [Project](https://copr.fedorainfracloud.org/coprs/devcomp/lune/) |
 
 
 ## Installation
