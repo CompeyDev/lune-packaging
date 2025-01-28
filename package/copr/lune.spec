@@ -14,6 +14,7 @@ ExclusiveArch: x86_64 aarch64
 
 BuildRequires: cmake
 BuildRequires: rust
+BuildRequires: cargo
 BuildRequires: just
 BuildRequires: clang
 BuildRequires: musl-devel
