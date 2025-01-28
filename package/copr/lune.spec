@@ -18,7 +18,7 @@ BuildRequires: cargo
 BuildRequires: just
 BuildRequires: clang
 %ifarch aarch64
-BuildRequires: aarch64-linux-gnu-gcc
+BuildRequires: gcc-aarch64-linux-gnu
 BuildRequires: musl-devel
 %endif
 
