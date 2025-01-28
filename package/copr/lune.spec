@@ -16,7 +16,6 @@ BuildRequires: cmake
 BuildRequires: rust
 BuildRequires: just
 BuildRequires: clang
-BuildRequires: musl
 BuildRequires: musl-devel
 
 
