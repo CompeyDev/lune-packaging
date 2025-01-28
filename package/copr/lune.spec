@@ -15,7 +15,6 @@ ExclusiveArch: x86_64 aarch64
 BuildRequires: cmake
 BuildRequires: rust
 BuildRequires: just
-BuildRequires: musl-tools
 BuildRequires: clang
 BuildRequires: musl
 BuildRequires: musl-devel
