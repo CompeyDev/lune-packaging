@@ -36,7 +36,7 @@ Requires: glibc
 %prep
 %setup -q -n lune-%{version}
 # Removes the first line containing clippy lint attribute which is falsely flagged as a shebang in build
-sed -i '1d' crates/lune/src/main.rs
+find . -type f -name "*.rs" -exec perl -i -ne 'print unless /^\#!\[/ ' {} +
 
 
 %build
