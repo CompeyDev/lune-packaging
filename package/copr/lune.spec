@@ -40,7 +40,11 @@ Requires: glibc
 %setup -q -n lune-%{version}
 # Removes the first line containing clippy lint attribute which is falsely flagged as a shebang in build
 find . -type f -name "*.rs" -exec perl -i -ne 'print unless /^\#!\[/ ' {} +
-
+cat <<EOF> .cargo/config.toml
+[target.aarch64-unknown-linux-gnu]
+linker = "aarch64-linux-gnu-gcc"
+rustflags = ["-L", "/usr/lib/gcc/aarch64-linux-gnu/14"]
+EOF
 
 %build
 just build --locked --release
