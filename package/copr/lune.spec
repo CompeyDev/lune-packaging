@@ -20,7 +20,7 @@ BuildRequires: clang
 BuildRequires: perl
 %ifarch aarch64
 BuildRequires: binutils-aarch64-linux-gnu
-BuildRequires: sysroot-aarch64-glibc
+BuildRequires: gcc-c++-aarch64-linux-gnu
 BuildRequires: gcc-aarch64-linux-gnu
 BuildRequires: musl-devel
 %endif
