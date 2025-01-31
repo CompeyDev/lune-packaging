@@ -36,7 +36,7 @@ Requires: glibc
 %prep
 %setup -q -n lune-%{version}
 # Removes clippy lint attribute which is falsely flagged as a shebang in build
-sed -i '/#![allow(clippy::cargo_common_metadata)]/d' lune-%{version}/crates/lune/src/main.rs
+sed -i '/#![allow(clippy::cargo_common_metadata)]/d' $WORKSPACE/crates/lune/src/main.rs
 
 
 %build
