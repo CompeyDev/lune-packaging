@@ -17,6 +17,7 @@ BuildRequires: rust
 BuildRequires: cargo
 BuildRequires: just
 BuildRequires: clang
+BuildRequires: perl
 %ifarch aarch64
 BuildRequires: gcc-aarch64-linux-gnu
 BuildRequires: musl-devel
