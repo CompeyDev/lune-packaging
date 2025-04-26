@@ -94,17 +94,17 @@
           <p class="steps">Import the GPG signing keys:</p>
           <div class="code">
           <code>
-            $ curl https://id.devcomp.xyz/hi@devcomp.xyz/2.gpg | gpg --import
+            $ curl https://id.devcomp.xyz/hi@devcomp.xyz/4.gpg | gpg --import
           </code>
           <br />  
           <code>
-            # sh -c "curl https://id.devcomp.xyz/hi@devcomp.xyz/2.gpg | sudo gpg --dearmor &gt; /usr/share/keyrings/lune-archive-keyring.gpg"
+            # sh -c "curl https://id.devcomp.xyz/hi@devcomp.xyz/4.gpg | sudo gpg --dearmor &gt; /usr/share/keyrings/lune-archive-keyring.gpg"
           </code>
           </div>
           <p class="steps">Add repository to sources.list:</p>
           <div class="code">
             <code> 
-              deb [signed-by=/usr/share/keyrings/lune-archive-keyring.gpg] https://repos.devcomp.xyz/ bookworm main 
+              # echo "deb [signed-by=/usr/share/keyrings/lune-archive-keyring.gpg] https://repos.devcomp.xyz/ bookworm main" >> /etc/apt/sources.list
             </code>
           </div>
           <p class="steps">Update your repository metadata:</p>
