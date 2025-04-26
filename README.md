@@ -46,10 +46,19 @@ scoop install lune
 Go to the [GitHub Actions Page](https://github.com/CompeyDev/lune-packaging/actions/workflows/appimage.yaml), and download the artifact suitable for your architecture from the build artifacts.
 
 ### APT
+
+> [!NOTE]
+> The signing key was recently changed! If you get errors such as:
+> ```
+> The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 429EF1C337871656
+> ```
+>
+> You need to run the commands below to import the new GPG signing keys.
+
 - Import the GPG signing keys:
 ```sh
-curl https://id.devcomp.xyz/hi@devcomp.xyz/2.gpg | gpg --import
-sudo sh -c "curl https://id.devcomp.xyz/hi@devcomp.xyz/2.gpg | sudo gpg --dearmor > /usr/share/keyrings/lune-archive-keyring.gpg"
+curl https://id.devcomp.xyz/hi@devcomp.xyz/4.gpg | gpg --import
+sudo sh -c "curl https://id.devcomp.xyz/hi@devcomp.xyz/4.gpg | sudo gpg --dearmor > /usr/share/keyrings/lune-archive-keyring.gpg"
 ```
 - Add the repository to `sources.list`:
 ```md
