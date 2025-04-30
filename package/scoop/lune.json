@@ -1,5 +1,5 @@
 {
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "A standalone Luau script runtime",
   "homepage": "https://lune-org.github.io/docs",
   "license": {
@@ -8,8 +8,8 @@
   },
   "architecture": {
     "64bit": {
-      "url": "https://github.com/lune-org/lune/releases/download/v0.9.0/lune-0.9.0-windows-x86_64.zip",
-      "hash": "b81314c6220853cdcf9ab7f7aa398624cd59f8da2740e48fe0b0a66e6e5d8a1e"
+      "url": "https://github.com/lune-org/lune/releases/download/v0.9.1/lune-0.9.1-windows-x86_64.zip",
+      "hash": "52966cf4a19fd005c46a7bb200fffaa81e93810ae4c8e1ee9a8b56876c182549"
     }
   },
   "bin": "lune.exe",
