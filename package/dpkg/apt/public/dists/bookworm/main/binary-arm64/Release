@@ -1,0 +1,7 @@
+Origin: . bookworm
+Label: . bookworm
+Archive: bookworm
+Suite: bookworm
+Codename: bookworm
+Architecture: arm64
+Component: main
