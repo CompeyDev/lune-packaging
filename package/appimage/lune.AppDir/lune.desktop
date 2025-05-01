@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=lune
-Exec=lune
-Icon=lune
-Categories=Development;
-Terminal=true
-X-AppImage-Version=.glibc2.34
