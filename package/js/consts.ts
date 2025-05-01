@@ -7,6 +7,6 @@ await ensureDir(BASE_PATH);
 
 export default {
 	name: "lune",
-	version: "0.9.1",
+	version: "0.9.2",
 	api_url: "https://api.github.com/repos/lune-org/lune/releases",
 } as const;
