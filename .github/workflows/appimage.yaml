@@ -6,11 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
-    strategy:
-      matrix:
-        arch: ["x86_64"]
-    
+  build:    
     name: Build the AppImage 
     runs-on: ubuntu-latest
 
@@ -24,29 +20,22 @@ jobs:
           submodules: true
 
       - name: AppImage routine
-        uses: lalten/run-on-arch-action@amd64-support
-        id: buildimg
-        with:
-          arch: ${{ matrix.arch }}
-          distro: buster
-          dockerRunArgs: |
-            --volume "./package/appimage:/build" --privileged
-          run: |
-            export LUNE_VERSION=${{ vars.lune_VERSION }}
-          
-            echo "Running build on debian linux $(uname -m)"
+        run: |
+          export LUNE_VERSION=${{ vars.lune_VERSION }}
+        
+          echo "Running build on debian linux $(uname -m)"
 
-            apt update
-            apt install imagemagick file desktop-file-utils curl wget dpkg-dev unzip fuse libfuse2 -y
-            
-            wget https://github.com/AppImage/AppImageKit/releases/download/13/appimagetool-$(uname -m).AppImage -O /usr/bin/appimagetool
-            chmod a+x /usr/bin/appimagetool
-            
-            cd /build/lune.AppDir
-            ARCH=$(uname -m) /usr/bin/appimagetool .
-            
-            mkdir ../out
-            mv ./lune-*.AppImage  ../out/lune-$LUNE_VERSION.glibc2.34-$(uname -m).AppImage
+          apt update
+          apt install imagemagick file desktop-file-utils curl wget dpkg-dev unzip fuse libfuse2 -y
+          
+          wget https://github.com/AppImage/AppImageKit/releases/download/13/appimagetool-$(uname -m).AppImage -O /usr/bin/appimagetool
+          chmod a+x /usr/bin/appimagetool
+          
+          cd /build/lune.AppDir
+          ARCH=$(uname -m) /usr/bin/appimagetool .
+          
+          mkdir ../out
+          mv ./lune-*.AppImage  ../out/lune-$LUNE_VERSION.glibc2.34-$(uname -m).AppImage
 
       - name: Upload generated images
         uses: actions/upload-artifact@v3
