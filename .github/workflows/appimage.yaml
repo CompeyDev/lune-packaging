@@ -38,7 +38,7 @@ jobs:
           mv ./lune-*.AppImage  ../out/lune-$LUNE_VERSION.glibc2.34-$(uname -m).AppImage
 
       - name: Upload generated images
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: lune-0.7.7.glibc2.34-${{ vars.LUNE_VERSION }}.AppImage
           path: ./package/appimage/out/lune-${{ vars.LUNE_VERSION }}.glibc2.34-${{ matrix.arch }}.AppImage
