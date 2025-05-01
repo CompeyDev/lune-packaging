@@ -28,17 +28,17 @@ jobs:
           sudo apt-get update
           sudo apt-get install imagemagick file desktop-file-utils curl wget dpkg-dev unzip fuse libfuse2 -y
           
-          wget "https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage" -O /usr/bin/appimagetool
-          chmod a+x /usr/bin/appimagetool
+          wget "https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage"
+          chmod a+x ./appimagetool-x86_64.AppImage
           
-          cd ./package/appimage/lune.AppDir
-          ARCH=$(uname -m) /usr/bin/appimagetool .
+          ./appimagetool-x86_64.AppImage ./package/appimage/lune.AppDir
           
           mkdir ../out
-          mv ./lune-*.AppImage  ../out/lune-$LUNE_VERSION.glibc2.34-$(uname -m).AppImage
+          mv ./lune-*.AppImage ../out/lune-$LUNE_VERSION.glibc${{ vars.LUNE_GLIBC_VERSION }}-x86_64.AppImage
 
       - name: Upload generated images
         uses: actions/upload-artifact@v4
         with:
-          name: lune-0.7.7.glibc2.34-${{ vars.LUNE_VERSION }}.AppImage
-          path: ./package/appimage/out/lune-${{ vars.LUNE_VERSION }}.glibc2.34-${{ matrix.arch }}.AppImage
+          name: lune-${{ vars.lune_VERSION }}.glibc${{ vars.LUNE_GLIBC_VERSION }}-x86_64.AppImage
+          path: "*.AppImage"
+          if-no-files-found: error
