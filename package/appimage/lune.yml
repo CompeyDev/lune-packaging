@@ -16,6 +16,6 @@ script:
   - Categories=Development;
   - Terminal=true
   - EOF
-  - wget https://raw.githubusercontent.com/microsoft/fluentui-emoji/dfb5c3b7b10e20878a3fee6e3b05660e4d3bd9d5/assets/Crescent%20moon/3D/crescent_moon_3d.png -O usr/share/icons/hicolor/256x256/apps/lune.png
+  - wget -qO- https://github.com/lune-org/lune/raw/b1fc600/assets/logo/tilt-grid.png | magick - -resize 256x256 usr/share/icons/hicolor/256x256/apps/lune.png
   - cp usr/share/icons/hicolor/256x256/apps/lune.png .
   - echo $LUNE_VERSION | tee ../VERSION
