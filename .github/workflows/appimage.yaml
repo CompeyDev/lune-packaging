@@ -28,7 +28,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install imagemagick file desktop-file-utils curl wget dpkg-dev unzip fuse libfuse2 -y
           
-          wget https://github.com/AppImage/AppImageKit/releases/download/13/appimagetool-$(uname -m).AppImage -O /usr/bin/appimagetool
+          wget "https://github.com/AppImage/appimagetool/releases/download/continuous/appimagetool-x86_64.AppImage" -O /usr/bin/appimagetool
           chmod a+x /usr/bin/appimagetool
           
           cd ./package/appimage/lune.AppDir
