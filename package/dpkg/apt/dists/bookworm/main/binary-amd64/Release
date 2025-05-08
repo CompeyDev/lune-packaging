@@ -2,5 +2,6 @@ Origin: . bookworm
 Label: . bookworm
 Archive: bookworm
 Suite: bookworm
+Codename: bookworm
 Architecture: amd64
 Component: main
