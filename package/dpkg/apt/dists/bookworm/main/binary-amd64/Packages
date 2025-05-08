@@ -4,11 +4,11 @@ Architecture: amd64
 Version: 0.9.3
 Depends: libc6, libgcc1, libbz2-1.0, libstdc++6
 Filename: pool/main/l/lune/lune-0.9.3-1_x86-64.deb
-Size: 516
-MD5sum: 89648eaeed74964889dd8192ef19fe65
-SHA1: d5984c27bcb9511189c55003bae4000e5b965055
-SHA256: 8d08116b7897e212efaa8013aa508af1645b47d19d957a2858ef113a6bcba7e5
-SHA512: 5d27036d0aa8ee388d1a34c93e5b5572d1c07e11879c319d8b23dbf537ac46d3c3a02207afd4455005ab8f128890cfa3680555e3aac9fafe4019279de7981b5b
+Size: 4180332
+MD5sum: 739487dd077a5eccfd737e9439fc0c17
+SHA1: 6aed930319e9e2f6b24055c00b84e415ab13a857
+SHA256: dacf881165d072b73d6f3ce1e8cc72da31ca61e0e85717b9215665d265dba5e4
+SHA512: 73d43c551b4812cd2d3b5206d32e96ba67bbd073bb84c9af157575e7fed449b2e0f8398542321d6a5a40ee8885e32adef89396af0b4215dd05658f0277330ce0
 Description: A standalone Luau script runtime
 Homepage: http://lune-org.github.io/docs
 
