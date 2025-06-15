@@ -1,5 +1,5 @@
 Name:           lune
-Version:        0.9.3
+Version:        0.9.4
 Release:        1%{?dist}
 Summary:        A standalone Luau runtime
 
