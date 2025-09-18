@@ -14,6 +14,16 @@ For more information on lune, see [lune-org/lune](https://github.com/lune-org/lu
 
 
 ## Installation
+
+> [!NOTE]
+> All release artifacts have been signed by a GPG key with the fingerprint: 
+> ```
+> FD53 1DF3 2486 2417 4AAD  F23E 429E F1C3 3787 1656
+> ```
+>
+> To import it, **see step 1 in the [APT](#apt) section**. This key may periodically update,
+> so if you face any errors while verifying any artifacts, import the newest key as per the command.
+
 ### Homebrew
 Since lune has its cask published to Homebrew core, it can be installed as such:
 
@@ -69,3 +79,4 @@ deb [signed-by=/usr/share/keyrings/lune-archive-keyring.gpg] https://repos.devco
 sudo apt update
 sudo apt install lune
 ```
+
