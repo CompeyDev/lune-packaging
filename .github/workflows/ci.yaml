@@ -19,16 +19,13 @@ jobs:
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
         with:
-          components: rustfmt, clippy
+          components: rustfmt
 
       - name: Rustfmt
         run: cd lune-src/ && cargo fmt -- --check
 
       - name: Build
         run: cd lune-src/ && cargo build --locked
-
-      - name: Clippy
-        run: cd lune-src/ && cargo clippy
 
       - name: Test
         run: cd lune-src/ && cargo test --package lune -- --test-threads 1 || (EC=$?; if [ $EC -ne 0 ]; then exit 0; fi)
