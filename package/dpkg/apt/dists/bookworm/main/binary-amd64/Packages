@@ -1,6 +1,20 @@
 Package: lune
 Maintainer: Erica Marigold <hi@devcomp.xyz>
 Architecture: amd64
+Version: 0.10.2
+Depends: libc6, libgcc1, libbz2-1.0, libstdc++6
+Filename: pool/main/l/lune/lune-0.10.2-1_x86-64.deb
+Size: 4059044
+MD5sum: 12b6b9d97f4b96194b00a0f154263051
+SHA1: d7d180cadc3ed6cdc2adbd8d89ad3212fab5b5a1
+SHA256: 7b7219f832b35d98ea14845e7ae6d89ac079aa4ba18f2cbe176ebff6beb2a15c
+SHA512: 2855c85fca71196a3c935cc45ff8ba3ef37d81d1e43d931fec35f7cac02be157790036faf980a24ab08798b893da56afc10e961f404d8f31036ed1305b83e90c
+Description: A standalone Luau script runtime
+Homepage: http://lune-org.github.io/docs
+
+Package: lune
+Maintainer: Erica Marigold <hi@devcomp.xyz>
+Architecture: amd64
 Version: 0.10.1
 Depends: libc6, libgcc1, libbz2-1.0, libstdc++6
 Filename: pool/main/l/lune/lune-0.10.1-1_x86-64.deb

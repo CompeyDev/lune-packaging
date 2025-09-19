@@ -1,0 +1,7 @@
+Package: lune
+Version: 0.10.2
+Maintainer: Erica Marigold <hi@devcomp.xyz>
+Depends: libc6, libgcc1, libbz2-1.0, libstdc++6
+Architecture: amd64
+Homepage: http://lune-org.github.io/docs
+Description: A standalone Luau script runtime
