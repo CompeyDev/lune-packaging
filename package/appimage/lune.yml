@@ -2,7 +2,7 @@ app: lune
 
 ingredients:
   script:
-    - wget "https://github.com/lune-org/lune/releases/download/v$LUNE_VERSION/lune-$LUNE_VERSION-linux-x86_64.zip"
+    - wget "https://github.com/lune-org/lune/releases/download/v$LUNE_VERSION/lune-$LUNE_VERSION-linux-$LUNE_ARCH.zip"
     - unzip lune-*.zip
 
 script:
