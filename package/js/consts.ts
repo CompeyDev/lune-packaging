@@ -6,7 +6,7 @@ export const BASE_PATH = path.join(home_dir()!, ".lune", "versions");
 await ensureDir(BASE_PATH);
 
 export default {
-	name: "lune",
-	version: "0.10.2",
-	api_url: "https://api.github.com/repos/lune-org/lune/releases",
+  name: "lune",
+  version: "0.10.3",
+  api_url: "https://api.github.com/repos/lune-org/lune/releases",
 } as const;
