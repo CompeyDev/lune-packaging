@@ -1,5 +1,5 @@
 Name:           lune
-Version:        0.10.2
+Version:        0.10.3
 Release:        1%{?dist}
 Summary:        A standalone Luau runtime
 
@@ -62,4 +62,3 @@ install -m0755 ./target/release/%{name} %{buildroot}/%{_bindir}/%{name}
 
 %changelog
 %autochangelog
-
